@@ -1,0 +1,79 @@
+<header data-bind="component: { name: 'main-header', params: $data }, visible: (!isPortrait() || showingModals() <= 0) &amp;&amp; headerVisible">
+
+<a href="<%= page_path('index') %>"> <%= image_tag 'images/high-res-logo.png', class: "logo responsive_logo", 'data-bind' => "click: logoClick", style: 'margin-left: 1%;' %> </a>
+<!-- ko component: { name: 'hamburger-menu',  params: $root } --><div class="hamburger" onClick="hamburgerToggle()"></div>
+<div class="mobileMenu" data-bind="visible: mobileMenu() &amp;&amp; $root.isPortrait()" style="display: none;" id="mobile_menu">
+    <ul>
+      <li><a href="<%= rent_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Rent</a></li>
+      
+      <li><a href="<%= buy_properties_path %>" data-bind="text: $data.name, click: $parent.menuClick">Buy</a></li>
+      
+      <li><a href="<%= page_path('sell') %>" data-bind="text: $data.name, click: $parent.menuClick">Sell</a></li>
+      <li><a href="<%= blogs_path %>" data-bind="text: $data.name, click: $parent.menuClick">Blog</a></li>
+       
+      <li><a href="<%= page_path('about') %>" data-bind="text: $data.name, click: $parent.menuClick">Our Story</a></li>
+      <li><a href="<%= page_path('contact') %>">Contact Us</a></li>
+      <% if user_signed_in? %>
+        <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
+      <% end %>
+      <li><a href="<%= new_property_path %>">Submit New Property</a></li>
+      <li class="translation1"> 
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element');
+          }
+        </script>
+      </li>
+    </ul>
+    
+</div>
+<ul id="mainMenu" style="margin-left: -1%;">
+    <li> <a href="<%= rent_properties_path %>">Rent</a> </li>
+    <li> <a href="<%= buy_properties_path %>">Buy</a> </li>
+    <li> <a href="<%= page_path('sell') %>">Sell</a> </li>
+    <li> <a href="<%= blogs_path %>">Blog</a> </li>
+   
+    <li><a href="<%= page_path('about') %>">Our Story</a></li>
+    <li><a href="<%= page_path('contact') %>">Contact Us</a></li>
+    <% if user_signed_in? %>
+      <li><a href="<%= edit_user_registration_path %>">Profile</a></li>
+    <% end %>
+    <li class="translation2" style="width: 28%; margin-top: 1%;"> 
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true}, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </li>
+</ul>
+<div id="secondaryMenu">
+  <div class="phone"> <a href="tel:+2001234565665"> <%= Setting.first.phone %> </a> </div>
+  <div class="phone"> <a style="background: green; padding: 10px; color: white; border-radius: 4px; text-decoration: none" href="<%= new_property_path %>"><strong> + </strong> List Property</a> </div>
+  <div class="sessionInfo">
+    <% if user_signed_in? %>
+      <button class="dark"><i class="fa fa-sign-in icon"></i><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'top-bar-item' %> </a></button>
+    <% else %>
+      <button class="dark"><%= link_to "Login", new_user_session_path %> / <%= link_to "Sign up", new_user_registration_path %> </button>
+    <% end %>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+</header>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    if ($(window).width() < 481){
+      $('.translation2').remove();
+      $('.translation1').css('display', 'inline');
+    }
+    else{
+      $('.translation1').remove();
+      $('.translation2').css('display', '-webkit-inline-box');
+    }
+  });
+</script>
+

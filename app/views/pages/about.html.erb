@@ -1,0 +1,60 @@
+<section class="subheader" style="background-image: url(<%= Setting.first.our_story_top_image.url %>);">
+  <div class="container">
+    <h1>Our Story</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Our Story</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <p style="text-align: center; margin-bottom: -0.5%;"> <%= image_tag "images/divider.png", alt: "", style: 'margin-bottom: 2%;' %> </p>
+        <p style="text-align: center;"> <%= raw(Setting.first.about_us_welcome_msg) %> </p>
+        <p style="font-size: 17px; margin-left: 3%;"> <%= raw(Setting.first.about_us_text) %> </p>
+      </div>
+    </div> 
+
+  </div>
+</section>
+
+<section class="module cta hexs" style="background: white">
+  <div class="container">
+
+    <div class="module-header">
+      <h2 style="color: #566573">Explore the <strong>Marketplace</strong></h2>
+      <%= image_tag "images/divider-white.png", alt: "" %>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="hex">
+          <p><span style="margin-top: 5.5%;"><%= link_to 'Rent', rent_properties_path, style: 'color: white; font-style: bold' %></span></p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="hex">
+          <p><span style="margin-top: 5.5%;"><%= link_to 'Sell', page_path('sell'), style: 'color: white' %></span></p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="hex">
+          <p><span style="margin-top: 5.5%;"><%= link_to 'Buy', buy_properties_path, style: 'color: white' %></span></p>
+        </div>
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<section class="module cta image-bg" style="background-image: url(<%= Setting.first.our_story_background_image.url %>);">
+  <div class="img-overlay blacker"></div>
+  <div class="container">
+    <h2>Learn more about the Sudan <strong>Real Estate</strong>.</h2>
+    <a href="<%= blogs_path %>" class="button button-icon alt large"><i class="fa fa-angle-right"></i> Blog </a>
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

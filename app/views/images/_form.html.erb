@@ -1,0 +1,27 @@
+
+<% if @property.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@property.errors.count, "error") %> prohibited this Property from being submitted:</h2>
+
+        <ol>
+          <% @property.errors.full_messages.each do |msg| %>
+              <li style="font-size: 17px; color: red; margin-left: 2%;"><%= msg %></li>
+          <% end %>
+        </ol>
+    </div>  
+<% end %> 
+
+<%= form_for ([@property, @property.images.build]), :html => {:class => "login-form", multipart: true} do |f| %>
+				          
+  <div class="form-block">
+    <label style="margin-bottom: -2%;">Upload Image</label><br>
+    <%= f.file_field :image, autofocus: true, :class => "border", :required => true, style: "padding-left: 4px;" %>
+  </div>
+
+  <div class="form-block">
+    <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Add</button>
+  </div>
+
+  <div class="divider"></div>
+
+<% end %>

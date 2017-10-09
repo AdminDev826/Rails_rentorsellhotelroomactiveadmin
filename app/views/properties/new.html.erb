@@ -1,0 +1,51 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Submit Property</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Submit Property</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="background-color: #0f8845;color: white;">
+      <div class="modal-header" style="background-color: #0f8845;color: white;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="background-color: #0f8845;color: white;">To Get your Property Live</h4>
+      </div>
+      <div class="modal-body">
+        <p>To make sure your property gets live on our website, You need to contact us. We will save it in our database but it's still Unpublished.</p>
+      </div>
+      <div class="modal-footer" style="background-color: #0f8845;color: white;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal End-->
+
+<section class="module property-submit">
+  <div class="container">
+
+    <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+
+    <!-- <form class="multi-page-form" method="post"> -->
+   
+	<%= render "form" %>
+        
+    <div class="clear"></div>
+
+    </div><!-- end basic info -->
+
+  </div><!-- end col -->
+  </div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

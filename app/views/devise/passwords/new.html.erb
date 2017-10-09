@@ -1,0 +1,39 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Reset Passwords</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Reset Password</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module login">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">  
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, :class => "login-form", style: "width: 119%;" }) do |f| %>
+  		<%= devise_error_messages! %>  
+          
+          <div class="form-block">
+            <%= f.label :email, style: "margin-bottom: -2%;" %><br />
+            <%= f.email_field :email, :class => "border" %>
+          </div>
+
+          <div class="form-block">
+            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Send me reset password instructions</button>
+          </div>
+          
+          <div class="form-block" style="margin-top: 5%;">
+            <%= render "devise/shared/links" %>
+          </div> 
+          
+          <div class="divider"></div> 
+        <% end %>  
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

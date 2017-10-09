@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  listing_type: MyString
+  location: MyString
+  bedrooms: 1
+  bath: 1
+  furnished: false
+  area: 1.5
+  price: 1
+  availibility: 2017-06-30
+
+two:
+  title: MyString
+  listing_type: MyString
+  location: MyString
+  bedrooms: 1
+  bath: 1
+  furnished: false
+  area: 1.5
+  price: 1
+  availibility: 2017-06-30

@@ -1,0 +1,20 @@
+<div class="col-lg-3 col-md-3 sidebar-left">
+  <div class="widget member-card">
+	<div class="member-card-header">
+	  <a href="#" class="member-card-avatar"> <%= image_tag current_user.image.url, style: "height: 83px;" %> </a>
+	  <h3>
+	  	<%= current_user.first_name.capitalize + ' ' + current_user.middle_name.capitalize %>
+	  </h3>
+	  <p><i class="fa fa-envelope icon"></i><%= current_user.email %></p>
+	</div>
+	<div class="member-card-content">
+	  <ul>
+	    <li class="active"><a href="<%= edit_user_registration_path %>"><i class="fa fa-user icon"></i>Profile</a></li>
+	    <li><a href="<%= page_path('my_properties') %>"><i class="fa fa-home icon"></i>My Properties</a></li>
+	    <li><a href="<%= favorites_path %>"><i class="fa fa-heart icon"></i>Favorited Properties</a></li>
+	    <li><a href="<%= new_property_path %>"><i class="fa fa-plus icon"></i>Submit Property</a></li>
+	    <li><i class="fa fa-reply icon" style="float: left; margin-left: 8%; margin-top: 7%;"></i> <%= link_to "Logout", destroy_user_session_path, method: :delete, style: "font-family: inherit;" %> </li>
+	  </ul>
+	</div>
+  </div>
+</div>

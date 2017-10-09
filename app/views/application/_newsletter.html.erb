@@ -1,0 +1,20 @@
+<section class="module cta newsletter" style="background-color: #59aee9">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-1 col-md-1"></div>
+    <div class="col-lg-5 col-md-5">
+      <h3 style="margin-top: 4%;">Subscribe to our <strong>NewsLetter</strong></h3>
+    </div>
+    <div class="col-lg-5 col-md-5">
+      <form method="post" class="newsletter-form" action="<%= newsletter_properties_path %>" data-remote="true">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="authenticity_token" value="RQp9E4jYyyPsbaOJmbvvftjumw76y75YFrSmPSD+IOj6K27EhFIOp2qsTJq9dKvE+6PkbULhO6SeyjagUjuUCQ==">
+        <input type="email" placeholder="Enter Your Email" name="email" />
+        <button type="submit"><i class="fa fa-send"></i></button>
+      </form>
+      <p style="color: darkslateblue; font-family: fantasy; font-size: larger;" id="newsletter_p"> </p>
+    </div>
+    <div class="col-lg-1 col-md-1"></div>
+  </div><!-- end row -->
+  </div><!-- end container -->
+</section>

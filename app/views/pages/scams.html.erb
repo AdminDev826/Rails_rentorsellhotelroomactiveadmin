@@ -1,0 +1,55 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Avoid Scams</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Avoid Scams</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+        <div id="accordion" class="content">
+          <h3>Avoid Scams</h3>
+          <div>
+            <%= raw(Setting.first.avoid_scams_text) %>
+          </div>
+          <h3>Here are tips to help you avoid scam </h3>
+          <div>
+            <%= raw(Setting.first.tips_avoid_scams_text) %>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+
+        <div class="widget widget-sidebar recent-properties">
+        <h4><span>Recent Properties</span> <%= image_tag "images/divider-half.png" %></h4>
+        <div class="widget-content">
+        <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(3) %>
+        <% @recents.each do |recent| %> 
+        
+        <div class="recent-property">
+          <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
+            <p><strong>$<%= recent.price %></strong> Per Month</p>
+          </div>
+          </div>
+        </div>
+         
+         <% end %>  
+        
+        </div><!-- end widget content -->
+      </div><!-- end widget -->
+        
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

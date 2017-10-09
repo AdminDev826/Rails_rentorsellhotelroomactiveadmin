@@ -1,0 +1,50 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Favorited Properties</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Favorited Properties</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module favorited-properties">
+  <div class="container">
+  
+	<div class="row">
+		<%= render "sidebar" %>
+
+		<div class="col-lg-9 col-md-9">
+		<% if @properties.size > 0 %>
+			<table class="my-properties-list favorite-properties-list">
+			  <tr>
+				<th>Image</th>
+				<th>Property</th>
+				<th>Actions</th>
+			  </tr>
+			  <% for property in @properties %>
+				  <tr>
+					<td class="property-img"><a href="#"><%= image_tag Property.find(property).image.url %></a></td>
+					<td class="property-title">
+						<a href="property-single.html"> <%= Property.find(property).title %> </a><br/>
+						<p class="property-address"><i class="fa fa-map-marker icon"></i> <%= Property.find(property).title %> </p>
+						<p><strong><%= Property.find(property).price %> SDG </strong></p>
+					</td>
+					<td class="property-actions">
+						<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>
+					</td>
+				  </tr>
+			  <% end %>
+			</table>
+		<% else %>
+			<p align="center" style="margin-top: 14%; margin-left: 28%; font-size: x-large; border-bottom: 2px solid #48a0dc; background-color: white; font-style: oblique; width: 70%" >You have not Marked any Property Favorite yet. </p>
+		<% end %>	
+			
+			<span><%= paginate @properties, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %></span>	
+			<div class="clear"></div>
+			
+		</div><!-- end col -->
+	</div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

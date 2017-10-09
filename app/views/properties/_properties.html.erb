@@ -1,0 +1,50 @@
+<% @properties.each do |property| %>
+			
+	<div class="property property-row property-row-sidebar shadow-hover">
+      <a href="<%= property_path(property) %>" class="property-img">
+        <div class="img-fade"></div>
+        <% if property.tag == 'Sell' %>
+          <div class="property-tag button status responsive-property-tag">For Sale </div>
+        <% else %>
+          <div class="property-tag button status responsive-property-tag">For <%= property.tag %> </div>
+        <% end %>
+        <div class="property-price responsive-property-price"> <%= property.price %> SDG </div>
+        <div class="property-color-bar"></div>
+        <%= image_tag property.image.url, style: "width: 100%; height: 245px;" %>
+      </a>
+      <div class="property-content">
+        <div class="property-title responsive-property-content">
+          <h4><a href="#"><%= link_to property.title, property_path(property) %></a></h4>
+          <p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
+          <div class="clear"></div>
+          <p class="property-text"><%= truncate(property.description, length: 30) %></p>
+        </div>
+        <table class="property-details responsive-property-details">
+          <tr>
+            <td><i class="fa fa-bed"></i> <%= property.bedrooms %> Bedrooms </td>
+            <td><i class="fa fa-tint"></i> <%= property.bath %> Baths </td>
+            <td><i class="fa fa-expand"></i> <%= property.area %> Meter Sq </td>
+          </tr>
+        </table>
+      </div>
+      <div class="property-footer responsive-property-footer">
+        <span class="left"><i class="fa fa-calendar-o icon"></i> <%= time_ago_in_words(property.created_at) %> ago</span>
+        <span class="right">
+          <% if user_signed_in? %>
+            <% u = User.find(current_user.id) %>
+            <% if u.favorites.find_by_property_id(property.id).blank? %>
+              <%= link_to "",mark_favorite_property_path(property), :class => "fa fa-heart-o icon" %>
+            <% else %>  
+              <%= link_to "",'#', :class => "fa fa-heart icon" %>
+            <% end %>
+          <% end %>    
+          <a href="<%= property_path(property) %>" class="button button-icon" style="margin-top: 0%;"><i class="fa fa-angle-right"></i>Details</a>
+        </span>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+  </div>
+
+<% end %>
+
+<span><%= paginate @properties, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %></span>

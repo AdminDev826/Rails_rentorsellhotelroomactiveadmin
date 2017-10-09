@@ -1,0 +1,74 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Change your password</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Change your password</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module login">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">  
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, :class => "login-form" }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+          
+          <div class="form-block">
+             <%= f.label :password, "New password", style: "margin-bottom: -2%;" %><br />
+             <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+             <% end %>
+             <%= f.password_field :password, autofocus: true, autocomplete: "off", :class => "border" %>
+          </div>
+
+          <div class="form-block">
+            <%= f.label :password_confirmation, "Confirm new password", style: "margin-bottom: -2%;" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "border" %>
+          </div>
+            
+          <div class="form-block">
+            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Change my Password</button>
+          </div>
+          
+          <div class="form-block" style="margin-top: 5%;">
+            <%= render "devise/shared/links" %>
+          </div> 
+          
+          <div class="divider"></div> 
+        <% end %>  
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>
+
+<!-- <h2>Change your password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field">
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Change my password" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+ -->

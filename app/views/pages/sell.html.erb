@@ -1,0 +1,40 @@
+<section class="subheader" style="background-image: url(<%= Setting.first.sell_top_image.url %>);">
+  <div class="container">
+    <h1>Are you looking to Sell your Property?</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Sell</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module content" style="background: white">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12" style="text-align: center">
+        <%= image_tag "images/divider.png", alt: "" %>
+        <p><strong style="color: #566573 !important"> <h3> Let Us Help You </h3> </strong> </p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-6 col-md-6" style="text-align: center">
+        <i class="fa fa-handshake-o sell-page-icons" aria-hidden="true"></i>
+        <p style="text-align: center;"> <strong> Are you a real estate agent? </strong> </p>
+        <p style="text-align: center;"> We can help grow your business by connecting you with clients within and outside of Sudan. </p>
+      </div>
+      
+      <div class="col-lg-6 col-md-6" style="text-align: center">
+        <i class="fa fa-home sell-page-icons" aria-hidden="true"></i>
+        <p style="text-align: center;"> <strong> Are you a property owner?  </strong> </p>
+        <p style="text-align: center;"> We can help connect you with one of our real estate agents and make your property visible to buyers worldwide. </p>
+      </div>
+    </div> <hr>
+    
+    <div class="col-lg-12 col-md-12" style="text-align: center; margin-top: 0%;">
+      <%= link_to 'Contact Us Today', page_path('contact'), class: 'btn btn-primary' %>
+    </div>
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

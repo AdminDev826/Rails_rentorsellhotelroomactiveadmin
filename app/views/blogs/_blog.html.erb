@@ -1,0 +1,13 @@
+<div class="blog-post shadow-hover">
+  <a href="<%= blog_path(blog) %>" class="blog-post-img">
+    <div class="img-fade"></div>
+    <%= image_tag blog.image.url, style: 'width: 100%; height: 500px' %>
+  </a>
+  <div class="content blog-post-content">
+    <h3><a href="<%= blog_path(blog) %>"> <%= blog.title %> </a></h3>
+    <p> <%= blog.created_at.strftime("%d %b. %Y") %> </p>
+    <p style="margin-top: -2%;"> By <strong> <%= blog.author %> </strong> </p>
+    <p> <%= truncate(blog.description, length: 350) %> </p>
+    <a href="<%= blog_path(blog) %>" class="button button-icon small alt"><i class="fa fa-angle-right"></i> Read More</a>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Profile</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Profile</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 42%; margin-left: 29%; margin-top: 3%; margin-bottom: 0%; background-color: transparent;">
+    <span style="float: left; margin-top: 0%;"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%; margin-top: auto;"><%= value %></p>
+  </div>
+<% end %>
+
+<section class="module favorited-properties">
+  <div class="container">
+  
+  <div class="row">
+    <%= render "sidebar" %>
+
+    <div class="col-lg-9 col-md-9">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= devise_error_messages! %>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="edit-avatar">
+              <%= image_tag current_user.image.url, :class => "profile-avatar" %>
+              <%= f.label :image %><br />
+              <%= f.file_field :image, :class => "button small border", style: "width: 100%" %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            
+            <div class="form-block">
+              <%= f.label :first_name, style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :first_name, autofocus: true, :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+              <%= f.label :middle_name, "Middle/Father Name", style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :middle_name, :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+              <%= f.label :family_name, style: "margin-bottom: -2%;" %><br />
+              <%= f.text_field :family_name, :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+              <%= f.label :email, style: "margin-bottom: -2%;" %><br />
+              <%= f.email_field :email, :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+               <%= f.label :contact, "Phone Number", style: "margin-bottom: -2%;" %><br />
+               <%= f.text_field :contact, :class => "border" %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Change Password</h4>
+            <div class="divider"></div>
+            <div class="form-block">
+               <%= f.label :password, style: "margin-bottom: -2%;" %> <i>(leave blank if you don't want to change it)</i><br />
+                <%= f.password_field :password, autocomplete: "off", :class => "border" %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %>
+            </div>
+            
+            <div class="form-block">
+              <%= f.label :password_confirmation, style: "margin-bottom: -2%;" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", :class => "border" %>
+            </div>
+            
+            <div class="form-block">
+                <%= f.label :current_password, style: "margin-bottom: -2%;" %> <i>(we need your current password to confirm your changes)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off", :class => "border" %>
+              </div>
+          
+            <div class="form-block">
+              <%= f.submit "Save Changes" %>
+            </div>
+
+            <% end %>
+            
+          </div>
+
+          <div class="col-lg-6">
+            <h4>Cancel my account</h4>
+            <div class="divider"></div>
+
+            <p>Unhappy? <hr><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+            <%= link_to "Back", :back %>
+          </div>
+
+        </div><!-- end row -->
+    
+    </div><!-- end col -->
+  </div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

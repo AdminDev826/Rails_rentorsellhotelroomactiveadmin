@@ -1,0 +1,38 @@
+<%= search_form_for @search, url: tag_search_properties_path do |f| %>
+  <div style="width: 30%; margin-left: 22%; padding-bottom: 20px" class="widget-content box tag_search"> 
+    <div class="form-block border">
+      <%= f.select :location_eq, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "Umdurman"]]), { prompt: "Select Location" }, { class: 'border' } %>
+      
+      <%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], select_value]), { prompt: "Select Listing Type" }, { class: "border" } %>
+    </div>
+    
+    <div class="form-block">
+      <%= f.number_field :bedrooms_gteq, class: "area-filter border", placeholder: "Min Beds", min: 0 %>
+      <%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Beds", min: 0 %>
+      <div class="clear"></div>
+    </div>
+    
+    <div class="form-block">
+      <%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price SDG", min: 0 %>
+      <%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price SDG", min: 0 %>
+      <div class="clear"></div>
+    </div>
+    
+    <div class="form-block">
+      <%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
+      <%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
+      <div class="clear"></div>
+    </div>
+    
+    <div class="form-block border">
+      <%= f.select :furnished_eq, [['Yes', true], ['No', false]], { include_blank: 'Furnished' }, { class: "border" } %>
+      <div class="clear"></div>
+    </div>
+    
+    <%= f.hidden_field :tag_eq, value: tag_value %>
+    
+    <div class="form-block" align="center">
+      <input type="submit" class="button" value="Find Properties" />
+    </div>
+  </div>
+<% end %>

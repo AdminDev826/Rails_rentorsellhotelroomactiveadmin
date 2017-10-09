@@ -1,0 +1,127 @@
+<section class="subheader" style="background-image: url(<%= Setting.first.contact_us_top_image.url %>);">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Contact Us</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module contact-details">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+        <div class="contact-item">
+          <i class="fa fa-envelope"></i>
+          <h4>Email Us</h4>
+          <p> <%= raw(Setting.first.email) %> </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="contact-item">
+          <i class="fa fa-phone"></i>
+          <h4>Call Us</h4>
+          <a href="#"><p style="color: white"> <%= raw(Setting.first.phone) %> </p></a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="contact-item">
+          <i class="fa fa-share-alt"></i>
+          <h4>Connect With Us</h4>
+          <ul class="social-icons">
+            <li>
+              <a target="_blank" href="<%= raw(Setting.first.fb_link) %>">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="<%= raw(Setting.first.instagram_link) %>">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="<%= raw(Setting.first.twitter_link) %>">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="<%= raw(Setting.first.youtube_link) %>">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 35%; margin-left: 10%; margin-top: 2%; margin-bottom: -3%; ">
+    <span style="float: left"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+  </div>
+<% end %>
+
+<section class="module">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8">
+
+        <div class="comment-form">
+          <h4><span>Quick Contact</span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+          <p> 
+            <b> Tell us how we can improve our site? </b> 
+            We’re always working to improve our user’s experience and we value your feedback. Let us know what we can do better.
+          </p>
+          
+		  <form action="<%= contact_form_properties_path %>" method="post">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="authenticity_token" value="wvP/4RGCvXYxBJ+pfqTeRzTI5pUdtRFuuP9eA5fNOmoawgH0jzsQgni4fUe9nTUmGjlsGl7GsEM82XxexhZSOA==">
+        <div class="form-block">
+          <label>Name *</label>
+          <input class="requiredField" type="text" placeholder="Your Name" name="name" value="" />
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block">
+              <label>Email *</label>
+              <input class="email requiredField" type="email" placeholder="Your email" name="email" value="" />
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block">
+              <label>Phone</label>
+              <input type="text" placeholder="Your phone" name="phone" value="" />
+            </div>
+          </div>
+        </div>
+        <div class="form-block">
+              <label>Subject</label>
+              <input type="text" placeholder="Subject" name="subject" value="" />
+            </div>
+        <div class="form-block">
+          <label>Message *</label>
+          <textarea class="requiredField" placeholder="Your message..." name="message"></textarea>
+        </div>
+        <div class="form-block">
+          <input type="submit" value="Submit" />
+	        <input type="hidden" name="submitted" id="submitted" value="true" />
+        </div>
+      </form>
+    </div>
+
+        <div class="divider"></div><br/>
+        <h4>Still need help?</h4>
+        <p> <b> Do you have any questions? </b> Visit our <%= link_to 'FAQs', page_path('faq') %> page to find quick answers to your questions. </p>
+
+      </div>
+    </div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

@@ -1,0 +1,276 @@
+<% WtfLang::API.key = "fa9d6d9faf06420ada0090796f8c778d" %>
+
+<section class="subheader">
+  <div class="container">
+    <h1><%= @property.title %></h1>
+    <div class="breadcrumb right"> <%= link_to "Home", page_path('index') %> <i class="fa fa-angle-right"></i> <%= link_to "Properties", properties_path %> <i class="fa fa-angle-right"></i> <a href="#" class="current"><%= @property.title %></a></div>
+    <div class="clear"></div>
+  </div>
+</section> 	
+
+<% flash.each do |key,value| %>
+	<div class="alert-box success" style="width: 35%; margin-left: 10%; margin-top: 2%; margin-bottom: -3%; ">
+		<span style="float: left"><i class="fa fa-check icon"></i></span>
+		<p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+	</div>
+<% end %>
+
+<section class="module">
+  <div class="container">
+  
+	<div class="row">
+		<div class="col-lg-8 col-md-8">
+
+			<% if @property.isPublished != 1 %>
+				<!-- ImageAdd Form -->
+				<div class="widget property-single-item property-agent" style="background-color: antiquewhite;">
+					<h4>
+						<span>Important Notice</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div>
+						<p style="font-size: medium; font-family: sans-serif;">Before Your Property is published, You must first contact us. Your property will go live as soon as we can verify all information. Thank you!</p>  
+				        <div class="clear"></div>
+				    </div>
+				</div>
+				<!-- End ImageAdd Form -->
+			<% end %>	
+		
+			<div class="property-single-item property-main">
+				<div class="property-header">
+					<div class="property-title">
+						<h4><%= @property.title %></h4>
+            <div class="property-price-single right"><%= @property.price %> SDG <span>Per Month</span></div>
+						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= @property.address %></p>
+            <div class="clear"></div>
+					</div>
+					<div class="property-single-tags">
+						<div class="property-tag button status" style="background: blueviolet">
+							<% if @property.tag == 'Sell' %>
+			          For Sale
+			        <% else %>
+			          For <%= @property.tag %>
+			        <% end %>
+						</div>
+						
+						<% if can? :update, @property %>
+						 	<div class="property-tag button alt featured"><%= link_to "Edit", 	edit_property_path(@property), style: "color: white;" %></div>
+						 <% end %>
+
+						 <% if can? :destroy, @property %>
+						 	<div class="property-tag button alt2 featured"><%= link_to "Delete", property_path(@property), style: "color: white;", method: :delete, data: {confirm: "You sure?"} %></div>
+						 <% end %>	
+
+						<div class="property-type right">Property Type: <a href="#"><%= @property.listing_type %></a></div>
+					</div>
+				</div>
+
+				<table class="property-details-single">
+					<tr>
+						<td><i class="fa fa-bed"></i> <span><%= @property.bedrooms %></span> Bedrooms</td>
+						<td><i class="fa fa-tint"></i> <span><%= @property. bath %></span> Baths</td>
+						<td><i class="fa fa-expand"></i> <span><%= @property.area %></span> Meter Sq </td>
+					</tr>
+				</table>
+
+        <div class="property-gallery">
+         
+          <div class="slider-nav slider-nav-property-gallery">
+            <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
+            <span class="slider-next"><i class="fa fa-angle-right"></i></span>
+          </div>
+          
+          <div class="slide-counter"></div>
+          
+          <div class="slider slider-property-gallery">
+            <div class="slide"><%= image_tag @property.image.url(:large), style: "width: 750px;position: relative;left: 0px;top: 0px;z-index: 999;opacity: 1;height: 492px" %></div>
+            <% @property.images.each do |img| %>
+            	
+            	<div class="slide">
+            		<%= image_tag img.image.url, style: "width: 750px;position: relative;left: 0px;top: 0px;z-index: 999;opacity: 1;height: 492px" %>
+            	</div>
+
+			<% end %>
+          </div>
+          
+          <div class="slider property-gallery-pager">
+          	<a class="property-gallery-thumb" style="height: 83px;"><%= image_tag @property.image.url %></a>
+          	<% @property.images.each do |img| %>
+            	<a class="property-gallery-thumb" style="height: 83px;"><%= image_tag img.image.url %></a>
+			<% end %>
+
+          </div>
+
+        </div>
+
+			</div><!-- end property title and gallery -->
+
+			<% if can? :create, @property.images.build %>
+				<!-- ImageAdd Form -->
+				<div class="widget property-single-item property-agent">
+					<h4>
+						<span>Add Images</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div>
+						<%= render "images/form" %>  
+				        <div class="clear"></div>
+				    </div>
+				</div>
+				<!-- End ImageAdd Form -->
+			<% end %>	
+			<div class="widget property-single-item property-description content">
+				<h4>
+					<span>Description</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+				</h4>
+				
+				<p <%= "dir=rtl" if @property.description.full_lang == 'arabic' %>>
+					<%= raw(@property.description) %>
+				</p>
+
+				<div>
+					<a href="#"><i class="fa fa-pencil icon"></i>Additional Details</a> <hr>
+	        <div id="tabs-1" class="">
+	          <ul>
+	          	<div class="row">
+		          	<div class="col-lg-6 col-md-6">
+			          	<li class="details">Property Location: <span><%= @property.location %></span></li>
+			          	<li  class="details">Property Availability: <span><%= @property.availibility %></span></li>
+			          	<li class="details">Furnished: <span><%= human_boolean(@property.furnished) %></span></li>
+			          </div>
+		          	<div class="col-lg-6 col-md-6">
+			          	<li  class="details">Posted at: <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>
+			          	<li class="details">Longitude: <span><%= @property.longitude %></span></li>
+			          	<li class="details">Latitude: <span><%= @property.latitude %></span></li>
+		          	</div>
+		          </div>
+	          </ul>
+	        </div>
+	    	</div>
+			</div><!-- end description -->
+
+			<div class="widget property-single-item property-location">
+				<h4>
+					<span>Location</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+				</h4>
+				<div id="map-single"><p align="center">
+				<% addr = @property.address.split(" ") %>
+			<iframe
+			  width="360"
+			  height="300"
+			  frameborder="0" style="border:0; margin-top: 0%;width: 100%; "
+			  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCpelVemmv6M9GjBnXwltZaDs7VN66ybwY
+			    &q=<%=addr.join('+')%>" allowfullscreen>
+			</iframe>
+		</p></div>
+			</div><!-- end location -->
+
+			<% if @property.tag != "Sell" %>
+				<div class="widget property-single-item property-agent">
+					<h4>
+						<span>Agent Information</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div class="agent">
+				        <a href="#" class="agent-img">
+				            <div class="img-fade"></div>
+				            <div class="button alt agent-tag"><%= @property.user.properties.count %> Properties</div>
+				            <%= image_tag @property.user.image.url, alt: "" %>
+				        </a>
+				        <div class="agent-content">
+				            <div class="agent-details" style="line-height: 2.5em">
+				                <h4><a href="#"><%= @property.user.first_name.capitalize %></a></h4>
+				                <p><i class="fa fa-envelope icon"></i><%= @property.user.email %></p>
+				                <p><i class="fa fa-phone icon"></i><%= @property.user.contact %></p>
+				            </div>
+				        </div>
+				        <div class="clear"></div>
+				    </div>
+				</div>
+			<% else %>
+				<div class="widget property-single-item property-agent">
+					<h4>
+						<span>Agent Information</span> <%= image_tag "images/divider-half.png", :class => "divider-hex" %>
+						<div class="divider-fade"></div>
+					</h4>
+					<div class="agent">
+						<div class="row">
+							<div class="col-lg-1 col-md-1"></div>
+							<div class="col-lg-4 col-md-4 responsive-agent-photo">
+				        <a href="#" class="agent-img">
+				            <div class=""></div>
+				            <%= image_tag "images/logo4.png" %>
+				        </a>
+				      </div>
+				      <div class="col-lg-4 col-md-4 sell-property-agent" style="margin-left: -20%; width: 38%;">
+				        <div class="agent-content">
+				            <div class="agent-details">
+			                <h4><a href="#">Araddi Agent</a></h4>
+			                <p><i class="fa fa-envelope icon"></i>info@araddi.com</p>
+			                <p><i class="fa fa-phone icon"></i>(+249) 901-93-3162 </p>
+				            </div>
+				            <ul class="social-icons">
+			                <li>
+			                	<a target="_blank" href="https://www.facebook.com/araddirealestate/">
+			                		<i class="fa fa-facebook"></i>
+			                	</a>
+			                </li>
+			                <li>
+			                	<a target="_blank" href="https://www.instagram.com/araddi_com/?hl=en">
+			                		<i class="fa fa-instagram"></i>
+			                	</a>
+			                </li>
+			                <li>
+			                	<a target="_blank" href="https://twitter.com/AraddiRealty">
+			                		<i class="fa fa-twitter"></i>
+			                	</a>
+			                </li>
+			                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+				            </ul>
+				        </div>
+				      </div>
+				      <div class="col-lg-3 col-md-3 sell-property-agent-contact">
+				      	<a href="<%= page_path('contact') %>" class="button button-icon small right"><i class="fa fa-angle-right"></i>Contact US</a>
+				      </div>
+				      <div class="clear"></div>
+				    </div>
+				  </div>
+				</div>
+			<% end %>
+			
+		</div><!-- end col -->
+		
+			<%= render "advanced_search" %>
+
+			<div class="widget widget-sidebar recent-properties">
+			  <h4><span>View More Properties</span> <%= image_tag "images/divider-half.png" %></h4>
+			  <div class="widget-content">
+			  <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(3) %>
+			  <% @recents.each do |recent| %>	
+				
+				<div class="recent-property">
+				  <div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
+					<div class="col-lg-8 col-md-8 col-sm-8">
+					  <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
+					  <p><strong><%= recent.price %> SDG</strong> Per Month</p>
+					</div>
+				  </div>
+				</div>
+			   
+			   <% end %>	
+				
+			  </div><!-- end widget content -->
+			</div><!-- end widget -->
+		
+		</div><!-- end sidebar -->
+		
+	</div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-598b62ce6aeb1503"></script>
+

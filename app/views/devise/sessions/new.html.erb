@@ -1,0 +1,53 @@
+<section class="subheader">
+  <div class="container">
+    <h1>Login</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Login</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 35%; margin-left: 32%; margin-top: 2%; margin-bottom: -3%; ">
+    <span style="float: left"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+  </div>
+<% end %>
+
+<section class="module login">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4"> 
+        <p>Don't have an account? <strong><a href="<%= new_user_registration_path %>">Register here.</a></strong></p> 
+        <form method="post" class="login-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => "login-form") do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-block">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, style: "margin-top: -4%;", :class => "border" %>
+          </div>
+          <div class="form-block">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", style: "margin-top: -4%;", :class => "border" %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-block" style="margin-bottom: 6%;">
+              <%= f.label :remember_me %>
+              <%= f.check_box :remember_me, style: "float: right; margin-top: -7.5%; margin-right: 55%;" %>
+            </div>
+          <% end %>
+          <div class="form-block">
+            <button class="button button-icon" type="submit"><i class="fa fa-angle-right"></i>Login</button>
+          </div>
+          <div class="form-block" style="margin-top: 5%;">
+            <%= render "devise/shared/links" %>
+          </div>  
+          <div class="divider"></div>    
+        <% end %>
+      </div>
+    </div><!-- end row -->
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

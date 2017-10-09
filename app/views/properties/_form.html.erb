@@ -1,0 +1,118 @@
+ <% flash.each do |key,value| %>
+    <div class="well" style="padding: 0px;width: 35%;border-radius: 4px;margin-left: 32%;">
+      <p id="notice" style="margin-top: 2%;color: darkgreen;font-size: 15px;font-family: monospace;" align="center"><%= value %></p>
+    </div>
+  <% end %> 
+
+ <%= simple_form_for @property, html: {multipart: true} do |f| %>
+
+      <div class="multi-page-form-content active">
+
+        <table class="property-submit-title">
+          <tr>
+            <td><span class="property-submit-num">1</span></td>
+            <td>
+              <h4>Submit Property</h4>
+              <p>List Your Property</p>
+            </td>
+          </tr>
+        </table>
+
+        <div class="form-block border">	
+          <%= f.input :title, input_html: { class: 'border' } %>
+        </div>
+
+        <div class="form-block m-bottom"> 
+          <%= f.input :address, input_html: { class: 'border', placeholder: 'Use COMMA appropriately to get exact MAP location' } %>
+        </div>
+
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border">
+              <%= f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank:' Select Tag' %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border">
+               <%= f.input :location, as: :select, collection: ['Khartoum', 'Bahri, Khartoum/north', 'Umdurman'], include_blank:' Select Location' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 3%;">
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month SDG" }, label: 'Rent Price' %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.input :area, input_html: { class: 'border', min: 0, placeholder: "Area in Meter Sq" } %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block border">
+              <%= f.input :availibility, as: :date, order: [:day, :month, :year], label: 'Availibility (DD/MM/YYYY)' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 3%;">
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.input :bedrooms, input_html: { class: 'border', min: 0, placeholder: 'Select number of bedrooms' } %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="form-block">
+              <%= f.input :bath, input_html: { class: 'border', min: 0, placeholder: 'Select number of baths' } %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4" style="margin-top: 3%">
+            <div class="form-block" style="margin-left: 8%; width: 25% ">
+              <%= f.input :furnished, input_html: { class: 'border responsive-box' } %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row" style="margin-bottom: 5%;">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block border" style="margin-bottom: 4%;">
+              <%= f.input :listing_type, as: :select, collection: ['Apartment', 'House', 'Villa', 'Office', 'Farm House', 'Empty Land'], include_blank: 'Select Listing Type' %>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-block" style="margin-bottom: 3%;"> 
+              <%= f.input :image, input_html: { class: 'border', style: 'padding: 8px; width: 100%;' } %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block" style="margin-bottom: 3%;">
+          <%= f.input :description, input_html: { :height => 300, class: 'border' } %>
+        </div>
+
+        <span><%= f.submit "Submit", style: "float: right;" %></span>
+
+        <!-- <span><%= f.submit "Submit", style: "float: right;", data: {toggle: "modal", target: "#myModal"} %></span> -->
+
+    <% end %>
+
+    <script type="text/javascript">
+      function display_listing_type_option(param){
+        if (param != 'sell'){
+          $("#sale_tag").fadeOut(500)
+        }
+        else{
+          $("#sale_tag").fadeIn(500);
+        }
+      }
+    </script>
+    
+    <script>
+      $( document ).ready(function() {
+         $('#datepicker').datepicker({
+            dateFormat: 'dd/mm/yy'
+         });
+      });
+    </script>

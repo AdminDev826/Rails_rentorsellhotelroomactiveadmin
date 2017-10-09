@@ -1,0 +1,26 @@
+<section class="subheader">
+  <div class="container">
+    <h1 style="color: #EBEDEF">Website Feedback</h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#" class="current">Website Feedback</a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module content" style="background: white">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12" style="text-align: center">
+        <%= image_tag "images/divider.png", alt: "" %>
+        <p><strong style="color: #566573 !important"> <h3> How can we improve our site? </h3> </strong> </p>
+        <p style="color: #566573 !important; font-size: 17px">
+          We’re always working to improve our user experience and we value your feedback. Let us know what we can do better.
+        </p>
+        <%= link_to 'Contact Us', page_path('contact'), style: 'background: #48a0dc; color: white; padding: 10px; border-radius: 4px; padding-left: 30px; padding-right: 30px' %>
+      </div>
+    </div> 
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>

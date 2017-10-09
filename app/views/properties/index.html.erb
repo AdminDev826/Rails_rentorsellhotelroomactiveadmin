@@ -1,0 +1,71 @@
+<section class="subheader subheader-listing-sidebar" style="background-image: url(<%= Setting.first.rent_top_image.url %>);">
+  <div class="container">
+    <h1>Property Listings</h1>
+    <div class="breadcrumb right"> <%= link_to "Home", page_path('index') %> <i class="fa fa-angle-right"></i> <a href="<%= properties_path %>" class="current"> Properties </a> </div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<% flash.each do |key,value| %>
+  <div class="alert-box success" style="width: 35%; margin-left: 7.6%; margin-top: 2%; margin-bottom: -3%; ">
+    <span style="float: left"><i class="fa fa-check icon"></i></span>
+    <p id="notice" style="margin-bottom: 0%;"><%= value %></p>
+  </div>
+<% end %>
+
+<section class="module">
+  <div class="container">
+
+	<div class="row">
+		<div class="col-lg-8 col-md-8">
+		
+			<div class="property-listing-header">
+				<% if @count != 0 %>
+					<strong> 
+						<span class="property-count left"> <%= @count %> properties found</span> 
+					</strong>
+				<% else %>
+					<strong> <p>No Properties Found. </p> </strong>	
+				<% end %>	
+				<!-- <div class="property-layout-toggle right">
+					<a href="property-listing-grid-sidebar.html" class="property-layout-toggle-item"><i class="fa fa-th-large"></i></a>
+					<a href="property-listing-row-sidebar.html" class="property-layout-toggle-item active"><i class="fa fa-bars"></i></a>
+				</div> -->
+				<div class="clear"></div>
+			</div><!-- end property listing header -->
+
+			<%= render "properties" %>
+		
+		</div><!-- end listing -->
+		
+			<%= render "advanced_search" %>
+			
+			<div class="widget widget-sidebar recent-properties">
+			  <h4><span>View More Properties</span> <%= image_tag "images/divider-half.png" %></h4>
+			  <div class="widget-content">
+			  <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(3) %>
+			  <% @recents.each do |recent| %>	
+				
+				<div class="recent-property">
+				  <div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
+					<div class="col-lg-8 col-md-8 col-sm-8">
+					  <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
+					  <p><strong><%= recent.price %> SDG</strong> Per Month</p>
+					</div>
+				  </div>
+				</div>
+			   
+			   <% end %>	
+				
+			  </div><!-- end widget content -->
+			</div><!-- end widget -->
+		
+		</div><!-- end sidebar -->
+		
+	</div><!-- end row -->
+
+  </div><!-- end container -->
+</section>
+
+<%= render 'newsletter' %>

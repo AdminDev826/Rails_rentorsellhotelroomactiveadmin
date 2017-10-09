@@ -1,0 +1,1453 @@
+@media screen and (max-width: 920px) {
+  /* line 2, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .hideInMobile {
+    display: none !important;
+  }
+
+  /* line 4, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .showInMobile {
+    display: block !important;
+  }
+
+  /* line 6, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  * {
+    font-weight: normal;
+  }
+
+  /* line 8, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  html {
+    font-size: 3vw;
+    height: 100%;
+  }
+
+  /* line 11, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  html body {
+    padding-top: 55px;
+    height: calc(100vh - 55px);
+    width: 100%;
+    font-weight: normal;
+  }
+
+  /* line 16, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  html body .progress {
+    top: 53px;
+    height: 3px;
+  }
+
+  /* line 19, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  div {
+    display: block;
+  }
+
+  /* line 22, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  input, textarea, keygen, select, button {
+    font-size: 3vw;
+  }
+
+  /* line 24, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  input, select {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  /* line 27, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  h1 {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+  }
+
+  /* line 32, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header {
+    width: 100%;
+  }
+
+  /* line 34, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header .logo {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  /* line 37, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header .hamburger {
+    margin: 19px 20px;
+    float: right;
+    background-image: url("../images/mobile-menu.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 17px;
+    line-height: 55px;
+    width: 27px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  /* line 50, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #mainMenu {
+    display: none;
+    width: 0;
+  }
+
+  /* line 53, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #secondaryMenu .phone {
+    display: none;
+    width: 0;
+  }
+
+  /* line 56, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #secondaryMenu .sessionInfo {
+    margin-right: 30px;
+  }
+
+  /* line 58, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #secondaryMenu .sessionInfo .dashboard {
+    display: none;
+    width: 0;
+  }
+}
+@media screen and (max-width: 920px) and (max-width: 414px) {
+  /* line 63, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #secondaryMenu .sessionInfo button {
+    padding: 6px 16px;
+  }
+}
+@media screen and (max-width: 920px) and (max-width: 414px) {
+  /* line 67, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #secondaryMenu .sessionInfo {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 920px) {
+  /* line 71, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #nextQuery {
+    padding: 2vw 2% 2vw 7%;
+    background-size: 5vw;
+    font-size: 100%;
+    width: 40%;
+    height: 4.8vw;
+  }
+
+  /* line 77, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header #nextQuery:focus {
+    width: 45%;
+  }
+
+  /* line 79, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header .mobileMenu {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    padding: 10px 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #eee;
+    width: 160px;
+    height: auto;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99;
+  }
+
+  /* line 93, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  header .mobileMenu li {
+    font-family: 'OpenSans-regular', sans-serif;
+    font-size: 14px;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+
+  /* line 98, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #closer {
+    position: static;
+    height: auto;
+  }
+
+  /* line 101, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .modal-centered {
+    margin: 3vh auto;
+    position: static;
+    width: 480px;
+    max-height: initial;
+  }
+}
+@media screen and (max-width: 920px) and (max-width: 500px) {
+  /* line 108, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .modal-centered {
+    width: 290px;
+  }
+}
+@media screen and (max-width: 920px) {
+  /* line 112, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #loginModal, #wizardModal, #passwordModal, #bugModal {
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    padding-top: 20px;
+    border: 1px solid #00d9ad;
+  }
+
+  /* line 117, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #loginModal .logo, #wizardModal .logo, #passwordModal .logo, #bugModal .logo {
+    display: none;
+  }
+
+  /* line 119, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #loginModal #loginContainer, #loginModal .step, #wizardModal #loginContainer,
+  #wizardModal .step, #passwordModal #loginContainer, #passwordModal .step,
+  #bugModal #loginContainer, #bugModal .step {
+    height: 100%;
+    padding: 0 20px 10px 20px;
+  }
+
+  /* line 124, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #loginModal #loginContainer input[type=button].option,
+  #loginModal .step input[type=button].option,
+  #wizardModal #loginContainer input[type=button].option,
+  #wizardModal .step input[type=button].option,
+  #passwordModal #loginContainer input[type=button].option,
+  #passwordModal .step input[type=button].option,
+  #bugModal #loginContainer input[type=button].option,
+  #bugModal .step input[type=button].option {
+    width: 100%;
+  }
+
+  /* line 133, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #loginContainer label, #passwordContainer label {
+    float: left;
+  }
+}
+@media screen and (max-width: 920px) and (max-width: 500px) {
+  /* line 137, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .appointmentForm {
+    padding: 0 20px 10px 20px;
+  }
+
+  /* line 139, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .appointmentForm select {
+    background-position: 140px;
+  }
+}
+@media screen and (max-width: 920px) {
+  /* line 143, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal {
+    margin: auto;
+  }
+
+  /* line 145, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal .copy {
+    position: absolute;
+    bottom: 6vw;
+    left: 1vw;
+  }
+
+  /* line 149, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal .help {
+    position: absolute;
+    bottom: 1vw;
+    right: 2.5vw;
+  }
+
+  /* line 153, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer {
+    width: 75%;
+    padding: 5%;
+    top: 20%;
+    left: 5%;
+    position: relative;
+  }
+
+  /* line 159, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer button {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  /* line 162, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer input[type=button] {
+    margin-top: 1vw;
+    border-radius: 0.25vw;
+    color: white;
+    padding: 1% 3%;
+    font-family: 'Avenir-light', sans-serif;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+    border: none;
+    outline: none;
+    background-color: #5FB7DC;
+  }
+
+  /* line 173, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .userDetails > span {
+    outline: none;
+    display: block;
+    width: calc(80% - 2vw);
+    margin: 0.5vw auto;
+    font-size: 175%;
+    padding: 0.5vw 1vw;
+    text-align: left;
+  }
+
+  /* line 181, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .actions {
+    display: block;
+    font-size: 0;
+  }
+
+  /* line 184, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .actions > li {
+    border: 1px solid #F0F0F0;
+    padding: 1vw 1vw;
+    display: inline-block;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 3vw;
+  }
+
+  /* line 191, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .actions > li:first-child {
+    border-radius: 1vw 0 0 1vw;
+    -webkit-border-radius: 1vw 0 0 1vw;
+    -moz-border-radius: 1vw 0 0 1vw;
+  }
+
+  /* line 195, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .actions > li:last-child {
+    border-radius: 0 1vw 1vw 0;
+    -webkit-border-radius: 0 1vw 1vw 0;
+    -moz-border-radius: 0 1vw 1vw 0;
+  }
+
+  /* line 199, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #phoneCallModal #phoneCallContainer .actions > li.selected {
+    background-color: #008DCB;
+    color: white;
+    border-color: #008DCB;
+  }
+
+  /* line 203, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #sectionsMenu {
+    width: 100%;
+    height: 12vw;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #fff;
+  }
+
+  /* line 208, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #sectionsMenu .sectionsFilter {
+    height: 12vw;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  /* line 214, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #sectionsMenu .sectionsFilter > li {
+    margin: 0 1.1vw 0 1.1vw;
+    padding: 0;
+    font-size: 115%;
+    line-height: 12vw;
+    font-family: 'Avenir-book', sans-serif;
+    color: #404040;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* line 224, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #sectionsMenu .sectionsFilter > li.selected {
+    font-family: 'Avenir-heavy', sans-serif;
+    line-height: calc(12vw - 2px);
+    border-bottom: 2px solid #008DCB;
+  }
+
+  /* line 228, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result {
+    min-height: calc(100% - 20vw - 1px);
+  }
+
+  /* line 230, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .group {
+    padding: 0;
+  }
+
+  /* line 232, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .group > .listItem p {
+    margin: 1vw 0 0 8.3vw;
+    color: #008dcb;
+  }
+
+  /* line 235, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .groupHeader > .left > div > button {
+    width: 10vw;
+    height: 5vw;
+  }
+
+  /* line 238, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .groupHeader > .filters > .checkboxList > button {
+    height: 8vw;
+    padding: 2vw;
+  }
+
+  /* line 241, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .groupHeader > .filters > input[type=button] {
+    height: 8vw;
+    padding: 2vw;
+  }
+
+  /* line 244, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result .filters {
+    padding: 0 9vw;
+  }
+
+  /* line 246, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result .filters > input, #result .filters > .checkboxList > button,
+  #result .filters > .dateRange > input {
+    padding: 1vw;
+    width: 24vw;
+    height: 4.8vw;
+  }
+
+  /* line 251, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result .filters > .checkboxList > button, #result .filters > input[type=button] {
+    height: 7.8vw;
+  }
+
+  /* line 253, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .sectionsFilter > li {
+    font-size: 80%;
+    margin: 0;
+    padding: 2.1vw 3vw;
+  }
+
+  /* line 257, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .sectionsFilter > li.selected {
+    border-bottom: 2px solid #0799CF;
+  }
+
+  /* line 259, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.listing.insightsCard {
+    width: 75vw;
+    margin-left: 0;
+  }
+
+  /* line 262, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card {
+    margin: 2vw 0.5vw;
+    height: 118vw;
+    width: 89vw;
+    padding: 2vw;
+  }
+
+  /* line 267, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > .thumbnail {
+    margin: -2vw -2vw 2vw -2vw;
+    height: 64vw;
+  }
+
+  /* line 270, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > h1 {
+    font-size: 200%;
+    letter-spacing: 0.12vw;
+  }
+
+  /* line 273, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > hr {
+    width: 16vw;
+    margin: 3.2vw auto;
+  }
+
+  /* line 276, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > h2 {
+    letter-spacing: 0.12vw;
+    font-size: 150%;
+  }
+
+  /* line 279, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > p {
+    font-size: 120%;
+    margin: 1.2vw 0;
+    letter-spacing: 0.12vw;
+  }
+
+  /* line 283, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > .actions > button {
+    padding: 6vw 4vw;
+    line-height: 0;
+    font-size: 80%;
+    background-size: 6vw;
+    letter-spacing: 0.12vw;
+  }
+
+  /* line 289, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > .actions > button.viewMore {
+    padding-right: 10.4vw;
+  }
+
+  /* line 291, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > .actions > button.printShowsheet {
+    padding-left: 8vw;
+  }
+
+  /* line 293, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.tour > .actions > button.delete {
+    padding-left: 8vw;
+  }
+
+  /* line 295, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.tour > .actions > button.viewMore {
+    padding-left: 8vw;
+  }
+
+  /* line 297, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.listing > p {
+    font-size: 150%;
+  }
+
+  /* line 299, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.listing > p {
+    font-size: 150%;
+  }
+
+  /* line 301, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.listing > .icons > .viewed {
+    height: 8vw;
+    width: 8vw;
+    margin-top: 3vw;
+  }
+
+  /* line 305, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.listing > .icons > .viewed > span {
+    font-size: 100%;
+    margin: 3.9vw 1.2vw 0 0;
+  }
+
+  /* line 308, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.lead > .thumbnail {
+    height: 18vw;
+    width: 18vw;
+    margin: 3vw auto;
+    line-height: 20vw;
+    font-size: 250%;
+  }
+
+  /* line 314, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.lead .agent {
+    height: 10vw;
+    width: 10vw;
+    line-height: 10.4vw;
+  }
+
+  /* line 318, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.lead .processType.small {
+    border-width: 10vw 10vw 0 0;
+    line-height: 6.4vw;
+  }
+
+  /* line 321, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.lead .processType.small > span {
+    margin: -9.5vw 1.5vw;
+  }
+
+  /* line 323, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card.document > .actions > button.viewOnline {
+    padding-right: 10vw;
+  }
+
+  /* line 325, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card .document > .actions > button.download {
+    padding-left: 10vw;
+  }
+
+  /* line 327, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+  }
+
+  /* line 331, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header {
+    top: 15.4vw;
+  }
+
+  /* line 333, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header > div > h1, .details > .header h2 {
+    font-size: 150%;
+    letter-spacing: 0.03vw;
+  }
+
+  /* line 336, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header > div > h2 {
+    font-size: 100%;
+  }
+
+  /* line 338, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header h1 {
+    margin: -0.5vw 0;
+  }
+
+  /* line 340, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header > div > .thumbnail {
+    height: 7.5vw;
+    width: 7.5vw;
+    line-height: 8.5vw;
+    font-size: 120%;
+  }
+
+  /* line 345, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details > .header > div.separator {
+    height: 12vw;
+    margin: -1vw 0;
+    padding: 0;
+  }
+
+  /* line 349, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #detailsHeaderContainer {
+    height: 20vw;
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
+
+  /* line 353, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #detailsHeaderContainer > div > h1 {
+    margin: 3vw 0 0 0;
+    font-size: 200%;
+  }
+
+  /* line 356, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #detailsHeaderContainer > div > h2 {
+    margin: 0;
+    font-size: 120%;
+  }
+
+  /* line 359, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #detailsHeaderContainer > div > .thumbnail {
+    height: 7vw;
+    width: 7vw;
+    line-height: 8vw;
+    font-size: 133%;
+  }
+
+  /* line 364, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  span.searchType {
+    width: 5vw;
+    height: 5vw;
+    line-height: 5.2vw;
+    font-size: 3.5vw;
+    margin-top: 0vw;
+  }
+
+  /* line 370, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .details, .group {
+    height: 100%;
+  }
+
+  /* line 372, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique {
+    display: inline-block;
+  }
+
+  /* line 374, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+    padding: 0 1% 0 0;
+    vertical-align: top;
+    font-weight: normal;
+  }
+
+  /* line 381, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol.neighborhoods {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  /* line 386, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol.neighborhoods li {
+    height: 6vw;
+    margin: 0 2vw 1vw 0;
+    padding: 2vw 7vw 1vw 2vw;
+    text-align: left;
+    display: inline-block;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+  }
+
+  /* line 395, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol.neighborhoods li span {
+    margin: 0;
+    padding: 0.8vw 1vw 0.5vw 0.3vw;
+    font-size: 90%;
+    line-height: 2vw;
+    color: #008DCB;
+    display: inline-block;
+  }
+
+  /* line 402, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol.neighborhoods li span.controls {
+    padding: 3.2vw 2vw 0 0;
+    color: #008DCB;
+  }
+
+  /* line 405, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol li {
+    margin: 0.4vw 0 0.4vw 1vw;
+    padding: 0.5vw 1vw;
+    position: relative;
+    border-radius: 0.2vw;
+    -webkit-border-radius: 0.2vw;
+    -moz-border-radius: 0.2vw;
+  }
+
+  /* line 412, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol li .controls {
+    position: absolute;
+    top: 0.45vw;
+    right: 0.75vw;
+    font-size: 85%;
+    cursor: pointer;
+  }
+
+  /* line 418, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.unique .subsection ol li span.controls > img {
+    display: inline-block;
+    height: 1vw;
+    width: 1vw;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  /* line 424, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column, .column.narrow, .column.popup {
+    padding: 0;
+    margin: 1vw 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  /* line 430, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .section, .column.narrow .section, .column.popup .section {
+    margin: 1vw 0 1vw 0;
+    padding: 0 3vw 0 9vw;
+    background-position: 3vw 4vw;
+    background-size: 2.5vw;
+    background-color: #fff;
+  }
+
+  /* line 436, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .section .grouper .collapser, .column.narrow .section .grouper .collapser,
+  .column.popup .section .grouper .collapser {
+    top: calc(50% - 1.5vw);
+    right: 0;
+    height: 3vw;
+    width: 3vw;
+  }
+
+  /* line 442, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .section.detail .grouper button.editParams,
+  .column.narrow .section.detail .grouper button.editParams,
+  .column.popup .section.detail .grouper button.editParams {
+    padding: 2.5% 3% 2% 3%;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+  }
+
+  /* line 449, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection, .column.narrow .subsection, .column.popup .subsection {
+    margin: 0;
+    padding: 2vw 0 3vw 0;
+    border: 0;
+    border-top: 2px solid #eee;
+    box-shadow: none;
+  }
+
+  /* line 455, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2 div button, .column.narrow .subsection h2 div button,
+  .column.popup .subsection h2 div button {
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+  }
+
+  /* line 460, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2.edit, .column.narrow .subsection h2.edit,
+  .column.popup .subsection h2.edit {
+    font-size: 120%;
+    font-weight: normal;
+    color: #404040;
+    margin: 1vw 0 1vw 0;
+  }
+
+  /* line 466, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2.edit ul, .column.narrow .subsection h2.edit ul,
+  .column.popup .subsection h2.edit ul {
+    width: 60vw;
+    margin: 0;
+    padding: 0;
+    top: 1vw;
+    left: -30vw;
+    overflow-x: hidden;
+  }
+
+  /* line 474, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2.edit li, .column.narrow .subsection h2.edit li,
+  .column.popup .subsection h2.edit li {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    display: block;
+    border-top: 1px solid #ccc;
+  }
+
+  /* line 481, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2.edit li span, .column.narrow .subsection h2.edit li span,
+  .column.popup .subsection h2.edit li span {
+    width: 100%;
+    padding: 2vw 3vw;
+    margin: 0;
+    line-height: 6vw;
+    font-size: 80%;
+    color: #ACACAC;
+    display: block;
+  }
+
+  /* line 490, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h2.edit li span:hover,
+  .column.narrow .subsection h2.edit li span:hover,
+  .column.popup .subsection h2.edit li span:hover {
+    color: #404040;
+    background-color: #fafafa;
+  }
+
+  /* line 495, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection h4, .column.narrow .subsection h4, .column.popup .subsection h4 {
+    font-size: 90%;
+  }
+
+  /* line 497, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .actions button, .column.narrow .subsection .actions button,
+  .column.popup .subsection .actions button {
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    padding: 3.4% 6% 3% 6%;
+  }
+
+  /* line 503, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form .schedule > li > button,
+  .column.narrow .subsection .form .schedule > li > button,
+  .column.popup .subsection .form .schedule > li > button {
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    margin-top: 1.2vw;
+  }
+
+  /* line 510, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li span,
+  .column.narrow .subsection .form > ul > li span,
+  .column.popup .subsection .form > ul > li span {
+    font-family: 'Avenir-book', sans-serif;
+    font-size: 100%;
+    color: #acacac;
+  }
+
+  /* line 516, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div > ul > li > span,
+  .column.narrow .subsection .form > ul > li div > ul > li > span,
+  .column.popup .subsection .form > ul > li div > ul > li > span {
+    color: #404040;
+  }
+
+  /* line 520, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div > ul > li > span.duration,
+  .column.narrow .subsection .form > ul > li div > ul > li > span.duration,
+  .column.popup .subsection .form > ul > li div > ul > li > span.duration {
+    color: #999;
+  }
+
+  /* line 524, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li label > span,
+  .column.narrow .subsection .form > ul > li label > span,
+  .column.popup .subsection .form > ul > li label > span {
+    color: #999;
+  }
+
+  /* line 528, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li label > form,
+  .column.narrow .subsection .form > ul > li label > form,
+  .column.popup .subsection .form > ul > li label > form {
+    height: 6.5vw;
+    margin-bottom: 3vw;
+  }
+
+  /* line 533, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li label > form input[type=file],
+  .column.narrow .subsection .form > ul > li label > form input[type=file],
+  .column.popup .subsection .form > ul > li label > form input[type=file] {
+    height: 5vw;
+    vertical-align: middle;
+  }
+
+  /* line 538, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li label > form .placeholder,
+  .column .subsection .form > ul > li label > form .uploading,
+  .column.narrow .subsection .form > ul > li label > form .placeholder,
+  .column.narrow .subsection .form > ul > li label > form .uploading,
+  .column.popup .subsection .form > ul > li label > form .placeholder,
+  .column.popup .subsection .form > ul > li label > form .uploading {
+    margin: 0;
+    padding: 2.5vw 2vw;
+    font-size: 80%;
+    line-height: 2vw;
+  }
+
+  /* line 548, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li a.downloadButton,
+  .column.narrow .subsection .form > ul > li a.downloadButton,
+  .column.popup .subsection .form > ul > li a.downloadButton {
+    padding: 2% 4%;
+    margin-right: 2vw;
+  }
+
+  /* line 553, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li button.deleteButton,
+  .column.narrow .subsection .form > ul > li button.deleteButton,
+  .column.popup .subsection .form > ul > li button.deleteButton {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+
+  /* line 558, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar,
+  .column.narrow .subsection .form > ul > li div .calendar,
+  .column.popup .subsection .form > ul > li div .calendar {
+    width: 100%;
+    margin-left: 18%;
+    margin-top: 3vw;
+    font-size: 90%;
+    border-collapse: collapse;
+    display: inline-block;
+  }
+
+  /* line 567, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar thead td b,
+  .column.narrow .subsection .form > ul > li div .calendar thead td b,
+  .column.popup .subsection .form > ul > li div .calendar thead td b {
+    cursor: pointer;
+  }
+
+  /* line 571, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tbody td,
+  .column.narrow .subsection .form > ul > li div .calendar tbody td,
+  .column.popup .subsection .form > ul > li div .calendar tbody td {
+    width: 8vw;
+    height: 8vw;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  /* line 580, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tbody td b,
+  .column.narrow .subsection .form > ul > li div .calendar tbody td b,
+  .column.popup .subsection .form > ul > li div .calendar tbody td b {
+    color: #404040;
+  }
+
+  /* line 584, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tbody td span,
+  .column.narrow .subsection .form > ul > li div .calendar tbody td span,
+  .column.popup .subsection .form > ul > li div .calendar tbody td span {
+    width: 100%;
+    height: 100%;
+    padding-top: 2.8vw;
+    color: #404040;
+    overflow: auto;
+    display: block;
+  }
+
+  /* line 593, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tr,
+  .column.narrow .subsection .form > ul > li div .calendar tr,
+  .column.popup .subsection .form > ul > li div .calendar tr {
+    height: 6vw;
+  }
+
+  /* line 597, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tr.monthyear,
+  .column.narrow .subsection .form > ul > li div .calendar tr.monthyear,
+  .column.popup .subsection .form > ul > li div .calendar tr.monthyear {
+    font-size: 130%;
+  }
+
+  /* line 601, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tr.monthyear b,
+  .column.narrow .subsection .form > ul > li div .calendar tr.monthyear b,
+  .column.popup .subsection .form > ul > li div .calendar tr.monthyear b {
+    color: #ACACAC;
+  }
+
+  /* line 605, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tr.monthyear span,
+  .column.narrow .subsection .form > ul > li div .calendar tr.monthyear span,
+  .column.popup .subsection .form > ul > li div .calendar tr.monthyear span {
+    color: #404040;
+  }
+
+  /* line 609, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar tr.weekdays,
+  .column.narrow .subsection .form > ul > li div .calendar tr.weekdays,
+  .column.popup .subsection .form > ul > li div .calendar tr.weekdays {
+    font-size: 80%;
+  }
+
+  /* line 613, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar td,
+  .column.narrow .subsection .form > ul > li div .calendar td,
+  .column.popup .subsection .form > ul > li div .calendar td {
+    text-align: center;
+  }
+
+  /* line 617, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar td > b,
+  .column.narrow .subsection .form > ul > li div .calendar td > b,
+  .column.popup .subsection .form > ul > li div .calendar td > b {
+    color: #404040;
+  }
+
+  /* line 621, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar td > span.offMonth,
+  .column.narrow .subsection .form > ul > li div .calendar td > span.offMonth,
+  .column.popup .subsection .form > ul > li div .calendar td > span.offMonth {
+    color: #ACACAC;
+  }
+
+  /* line 625, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .form > ul > li div .calendar td > span.selected,
+  .column.narrow .subsection .form > ul > li div .calendar td > span.selected,
+  .column.popup .subsection .form > ul > li div .calendar td > span.selected {
+    color: white;
+    background-color: #008DCB;
+  }
+
+  /* line 630, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection p, .column.narrow .subsection p, .column.popup .subsection p {
+    font-size: 2.5vw;
+    line-height: 3vw;
+  }
+
+  /* line 633, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection p b, .column.narrow .subsection p b,
+  .column.popup .subsection p b {
+    font-size: 3vw;
+  }
+
+  /* line 636, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection p > div > div, .column.narrow .subsection p > div > div,
+  .column.popup .subsection p > div > div {
+    margin-top: 2vw;
+  }
+
+  /* line 639, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn, .column.narrow .subsection .subcolumn,
+  .column.popup .subsection .subcolumn {
+    width: 100%;
+  }
+
+  /* line 642, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn p, .column.narrow .subsection .subcolumn p,
+  .column.popup .subsection .subcolumn p {
+    margin-bottom: 3vw;
+  }
+
+  /* line 645, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn select,
+  .column.narrow .subsection .subcolumn select,
+  .column.popup .subsection .subcolumn select {
+    padding: 2vw 6vw 2vw 2vw;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    background-size: 2vw;
+    background-position-x: calc(100% - 2vw);
+  }
+
+  /* line 654, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn .searchButtons,
+  .column.narrow .subsection .subcolumn .searchButtons,
+  .column.popup .subsection .subcolumn .searchButtons {
+    width: 100%;
+    margin-top: 2vw;
+    display: inline-block;
+  }
+
+  /* line 660, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn .searchButtons button,
+  .column.narrow .subsection .subcolumn .searchButtons button,
+  .column.popup .subsection .subcolumn .searchButtons button {
+    margin: 0 3vw 0 0;
+    padding: 2.5vw 3vw 2vw 3vw;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+  }
+
+  /* line 668, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn .searchButtons button a,
+  .column.narrow .subsection .subcolumn .searchButtons button a,
+  .column.popup .subsection .subcolumn .searchButtons button a {
+    white-space: normal;
+  }
+
+  /* line 672, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection ol, .column.narrow .subsection ol, .column.popup .subsection ol {
+    font-size: 120%;
+    display: block;
+    width: auto;
+    margin: 0 5%;
+  }
+
+  /* line 677, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.neighborhood > ol,
+  .column.narrow .subsection.neighborhood > ol,
+  .column.popup .subsection.neighborhood > ol {
+    width: 28%;
+    padding: 0 0 0 3vw;
+  }
+
+  /* line 682, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .taskIcon, .column.narrow .subsection .taskIcon,
+  .column.popup .subsection .taskIcon {
+    top: 2.5vw;
+    right: 0;
+    height: 2.5vw;
+    width: 2.5vw;
+    border-width: 2px;
+  }
+
+  /* line 689, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task .email-summary h1,
+  .column.narrow .subsection.task .email-summary h1,
+  .column.popup .subsection.task .email-summary h1 {
+    font-size: 100%;
+  }
+
+  /* line 693, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task h1, .column.narrow .subsection.task h1,
+  .column.popup .subsection.task h1 {
+    font-size: 120%;
+    color: #0799CF;
+  }
+
+  /* line 697, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task.template > .icons,
+  .column.narrow .subsection.task.template > .icons,
+  .column.popup .subsection.task.template > .icons {
+    top: 4vw;
+    right: 4vw;
+  }
+
+  /* line 702, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task.template > .icons > .favorited,
+  .column.narrow .subsection.task.template > .icons > .favorited,
+  .column.popup .subsection.task.template > .icons > .favorited {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  /* line 707, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task.template > .icons > .viewed,
+  .column.narrow .subsection.task.template > .icons > .viewed,
+  .column.popup .subsection.task.template > .icons > .viewed {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  /* line 712, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.task.template > .icons > .viewed > span,
+  .column.narrow .subsection.task.template > .icons > .viewed > span,
+  .column.popup .subsection.task.template > .icons > .viewed > span {
+    font-size: 85%;
+    margin: 4.3vw 1.4vw 0 0;
+  }
+
+  /* line 717, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.appointment > div,
+  .column.narrow .subsection.appointment > div,
+  .column.popup .subsection.appointment > div {
+    margin: 2.5vw 0 0 0;
+  }
+
+  /* line 721, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection.notes textarea, .column .subsection .notes p,
+  .column.narrow .subsection.notes textarea, .column.narrow .subsection .notes p,
+  .column.popup .subsection.notes textarea, .column.popup .subsection .notes p {
+    height: 31vw;
+  }
+
+  /* line 725, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column .subsection .subcolumn > a, .column.narrow .subsection .subcolumn > a,
+  .column.popup .subsection .subcolumn > a {
+    font-size: 60%;
+    border-radius: 0.5vw;
+    padding: 1vw 2vw 0.75vw;
+  }
+
+  /* line 730, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup, .column.narrow.popup, .column.popup.popup {
+    position: fixed;
+    top: 8.3vw;
+    left: 0;
+    z-index: 99;
+    height: calc(100% - 8.3vw);
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+  }
+
+  /* line 740, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .section, .column.narrow.popup .section, .column.popup.popup .section {
+    margin-top: 12vw;
+    padding: 0 3vw;
+  }
+
+  /* line 743, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .section .grouper, .column.narrow.popup .section .grouper,
+  .column.popup.popup .section .grouper {
+    height: 0;
+  }
+
+  /* line 746, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .section .grouper .content-title,
+  .column.narrow.popup .section .grouper .content-title,
+  .column.popup.popup .section .grouper .content-title {
+    margin: 0 0 3vw 0;
+    top: -9vw;
+  }
+
+  /* line 751, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .section .grouper button,
+  .column.narrow.popup .section .grouper button,
+  .column.popup.popup .section .grouper button {
+    width: 3vw;
+    height: 3vw;
+    top: -7.5vw;
+  }
+
+  /* line 757, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form ul select,
+  .column.narrow.popup .subsection .form ul select,
+  .column.popup.popup .subsection .form ul select {
+    padding: 1.5vw 5.5vw 1.5vw 1.5vw;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    background-position-x: calc(100% - 1.5vw);
+    background-size: 2.5vw;
+  }
+
+  /* line 766, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form ul input[type=text],
+  .column.popup .subsection .form ul input[type=number],
+  .column.narrow.popup .subsection .form ul input[type=text],
+  .column.narrow.popup .subsection .form ul input[type=number],
+  .column.popup.popup .subsection .form ul input[type=text],
+  .column.popup.popup .subsection .form ul input[type=number] {
+    padding: 1.5vw;
+    width: calc(100% - 2vw);
+  }
+
+  /* line 774, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form ul label > div,
+  .column.narrow.popup .subsection .form ul label > div,
+  .column.popup.popup .subsection .form ul label > div {
+    font-size: 120%;
+  }
+
+  /* line 778, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form .attachments li,
+  .column.narrow.popup .subsection .form .attachments li,
+  .column.popup.popup .subsection .form .attachments li {
+    height: 6vw;
+    margin: 0 2vw 1vw 0;
+    border-radius: 0.5vw;
+    -webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+  }
+
+  /* line 786, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form .attachments li span,
+  .column.narrow.popup .subsection .form .attachments li span,
+  .column.popup.popup .subsection .form .attachments li span {
+    padding: 1.5vw 1.5vw 1vw 1.5vw;
+    color: #008DCB;
+  }
+
+  /* line 791, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form .attachments li span.remover,
+  .column.narrow.popup .subsection .form .attachments li span.remover,
+  .column.popup.popup .subsection .form .attachments li span.remover {
+    font-size: 2vw;
+    color: #404040;
+  }
+
+  /* line 796, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form .attachments li span.clickable,
+  .column.narrow.popup .subsection .form .attachments li span.clickable,
+  .column.popup.popup .subsection .form .attachments li span.clickable {
+    color: #404040;
+  }
+
+  /* line 800, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection .form .attachments li.attach,
+  .column.narrow.popup .subsection .form .attachments li.attach,
+  .column.popup.popup .subsection .form .attachments li.attach {
+    width: 6vw;
+    height: 6vw;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+  }
+
+  /* line 808, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection label .segment,
+  .column.narrow.popup .subsection label .segment,
+  .column.popup.popup .subsection label .segment {
+    padding: 3vw 3vw 2.5vw 3vw;
+  }
+
+  /* line 812, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .column.popup .subsection label .selected,
+  .column.narrow.popup .subsection label .selected,
+  .column.popup.popup .subsection label .selected {
+    color: white;
+  }
+
+  /* line 816, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .grouped {
+    margin: 0 0 0 3vw;
+  }
+
+  /* line 818, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .content-title {
+    font-size: 4vw;
+    margin: 3vw 0 3vw 3vw;
+  }
+
+  /* line 821, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .content-close {
+    margin: 3vw 0;
+  }
+
+  /* line 823, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card-title {
+    margin: 0;
+    padding: 3.3vw 0 2.7vw 0;
+    font-family: 'Avenir-book', sans-serif;
+    font-size: 4vw;
+    letter-spacing: normal;
+    font-weight: normal;
+  }
+
+  /* line 830, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .card > button, .modalBox button, .modalBox select {
+    padding: 1vw 2vw 1vw 2vw;
+  }
+
+  /* line 832, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule {
+    max-height: 30vw;
+    max-height: 32vw;
+    width: 62%;
+    margin: 3vw 0 3vw 18%;
+    font-size: 80%;
+  }
+
+  /* line 838, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule > li {
+    height: 9vw;
+    border-top-width: 1px;
+  }
+
+  /* line 841, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule > li > span.time {
+    top: 2.25vw;
+  }
+
+  /* line 843, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule > li > span.duration {
+    top: 6vw;
+    color: #999;
+  }
+
+  /* line 846, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule > li > span.appointments {
+    margin-left: 30%;
+    margin-top: 1vw;
+    height: 6vw;
+    line-height: 9vw;
+  }
+
+  /* line 851, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .schedule > li > button {
+    margin-top: 1.3vw;
+  }
+
+  /* line 853, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  input[name="file"] {
+    font-size: 1.5vw;
+  }
+
+  /* line 855, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .listItem {
+    height: 10vw;
+    margin: 2vw;
+    width: calc(100% - 10vw);
+    padding: 3vw;
+    border: 1px solid #eee;
+    border-radius: 0.3vw;
+  }
+
+  /* line 862, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .listItem > h1.name {
+    height: 5vw;
+    line-height: 6vw;
+    width: 72%;
+  }
+
+  /* line 866, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .listItem > .phoneIcon {
+    height: 5vw;
+    width: 5vw;
+  }
+
+  /* line 869, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .listItem > .emailIcon {
+    height: 5vw;
+    width: 5vw;
+  }
+
+  /* line 872, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  #result > .groupHeader {
+    padding: 2vw 10.5vw;
+    min-height: 10vw;
+  }
+
+  /* line 875, /www/projects/wala/app/assets/stylesheets/scss/mobile.scss */
+  .viewMode {
+    height: 5vw;
+  }
+}

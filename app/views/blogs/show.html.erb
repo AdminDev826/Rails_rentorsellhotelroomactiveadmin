@@ -1,0 +1,57 @@
+<section class="subheader" style="background-image: url(<%= Setting.first.blog_top_image.url %>);">
+  <div class="container">
+    <h1><%= @blog.title %></h1>
+    <div class="breadcrumb right">Home <i class="fa fa-angle-right"></i> <a href="#">Blog</a> <i class="fa fa-angle-right"></i> <a href="#" class="current"><%= @blog.title %></a></div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="module">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <div class="blog-post">
+          <a href="#" class="blog-post-img">
+            <div class="img-fade"></div>
+            <%= image_tag @blog.image.url, style: 'width: 100%; height: 500px' %>
+          </a>
+          <div class="content blog-post-content">
+            <h3><a href="#"><%= @blog.title %></a></h3>
+            <p> <%= @blog.created_at.strftime("%d %b. %Y") %> </p>
+            <p style="margin-top: -2%;"> By <strong> <%= @blog.author %> </strong> </p>
+            <p><%= @blog.description %></p>
+          </div>
+        </div><!-- end blog post -->
+      </div><!-- end blog posts -->
+      <div class="col-lg-4 col-md-4 sidebar">
+        <div class="widget widget-sidebar recent-properties">
+          <h4><span>View More Properties</span> <%= image_tag "images/divider-half.png" %></h4>
+          <div class="widget-content">
+          <% @recents = Property.order(id: :desc).where(:isPublished => 1).first(4) %>
+          <% @recents.each do |recent| %> 
+          
+          <div class="recent-property">
+            <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
+              <p><strong><%= recent.price %> SDG</strong> Per Month</p>
+            </div>
+            </div>
+          </div>
+           
+           <% end %>  
+          
+          </div><!-- end widget content -->
+        </div><!-- end widget -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%= render 'newsletter' %>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-598b62ce6aeb1503"></script>

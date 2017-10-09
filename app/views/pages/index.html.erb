@@ -1,0 +1,137 @@
+<section class="subheader simple-search" style="background-image: url(<%= Setting.first.main_image.url %>);">
+  <div class="container">
+    <% flash.each do |key,value| %>
+      <div class="alert-box success" style="width: 42%; margin-left: 29%; margin-top: -2%; margin-bottom: 5%; background-color: transparent;">
+        <span style="float: left; margin-top: 1%;"><i class="fa fa-check icon"></i></span>
+        <p id="notice" style="margin-bottom: 0%; margin-top: auto;"><%= value %></p>
+      </div>
+    <% end %>
+    <h2 class="main-heading" style="margin-left: -23%; color: white; margin-top: -3%;"> A Simple Way to Find Real Estate in Khartoum </h2>
+    <div class="tabs" style="margin-left: -65%; margin-top: 2%;">
+      <ul style="margin-left: -7%;" class="tabs_ul">
+        <li><a href="#tabs-1">Rent</a></li>
+        <li><a href="#tabs-3">Buy</a></li>
+      </ul>
+      
+      <div id="tabs-1" class="ui-tabs-hide" style="margin-left: 23%;">
+        <%= render 'tag_search', tag_value: 'Rent', select_value: '' %>
+      </div>
+      
+      <div id="tabs-3" class="ui-tabs-hide" style="margin-left: 23%;">
+        <%= render 'tag_search', tag_value: 'Sell', select_value: ["Empty Land", "Empty Land"] %>
+      </div>
+    </div>
+  </div><!-- end container -->
+</section>
+
+<section class="module no-padding properties featured" style="margin-bottom: -3%; margin-top: 3%; background: white; padding: 15px; margin-top: -1%;">
+
+  <div class="container" style="margin-top: 3%;">
+    <div class="module-header">
+      <h2 style="color: #566573"> <%= raw(Setting.first.welcome_msg) %> </h2>
+      <%= image_tag "images/divider.png" %>
+      <p style="color: #566573"> We provide a simple and convenient way for those in search of real estate in Khartoum to connect with property owners and agents. </p>
+    </div>
+  </div>
+</section> <hr>
+
+<section class="module no-padding properties featured" style="margin-top: 5%;">
+
+  <div class="container">
+    <div class="module-header">
+      <h2 style="color: #566573">Browse our Featured <strong>Properties</strong> For Sale</h2>
+      <%= image_tag "images/divider.png" %>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="slider-nav slider-nav-properties-featured-for-sell">
+    <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
+    <span class="slider-next"><i class="fa fa-angle-right"></i></span>
+  </div>
+  
+  <div class="slider-wrap" style="width: 80%; margin-left: 10%;">
+    <div class="slider slider-featured">
+    <% @featureds = Property.all.where(isFeatured: 1, tag: "Sell") %>
+    <% @featureds.each do |featured| %>
+      <div class="property property-hidden-content slide">
+        <a href="<%= property_path(featured) %>" class="property-content responsive-property-content" style="width: 90%;" >
+          <div class="property-title">
+            <h4> <%= featured.title %> </h4>
+            <p class="property-address">
+              <i class="fa fa-map-marker icon"></i> 
+              <%= featured.address %> 
+            </p>
+          </div>
+          <table class="property-details">
+            <tr>
+              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Bedrooms</td>
+              <td><i class="fa fa-tint"></i>  <%= featured.bath %>  Baths</td>
+              <td><i class="fa fa-expand"></i>  <%= featured.area %>  Meter Sq</td>
+            </tr>
+          </table>
+        </a>
+        <a href="<%= property_path(featured) %>" class="property-img responsive-property-img" style="width: 90%;">
+            <div class="img-fade"></div>
+            <div class="property-tag button alt featured">Featured</div>
+            <div class="property-tag button status">
+              For Sale
+            </div>
+            <div class="property-price"> <%= featured.price %> SDG</div>
+            <div class="property-color-bar"></div>
+            <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
+        </a>
+      </div>
+    <% end %>
+    </div><!-- end slider -->
+  </div><!-- end slider wrap -->
+</section>
+
+<section class="module no-padding properties featured" style="margin-top: 5%; margin-bottom: 10%;">
+
+  <div class="container">
+    <div class="module-header">
+      <h2 style="color: #566573">Browse our Featured <strong>Properties</strong> For Rent</h2>
+      <%= image_tag "images/divider.png" %>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="slider-nav slider-nav-properties-featured-for-rent">
+    <span class="slider-prev"><i class="fa fa-angle-left"></i></span>
+    <span class="slider-next"><i class="fa fa-angle-right"></i></span>
+  </div>
+  
+  <div class="slider-wrap responsive-slider-wrap" style="margin-top: 4%;width: 80%; margin-left: 10%;">
+    <div class="slider slider-featured2">
+    <% @featureds = Property.all.where(isFeatured: 1, tag: "Rent") %>
+    <% @featureds.each do |featured| %>
+      <div class="property property-hidden-content slide">
+        <a href="<%= property_path(featured) %>" class="property-content responsive-property-content" style="width: 90%;">
+          <div class="property-title">
+            <h4> <%= featured.title %> </h4>
+            <p class="property-address"><i class="fa fa-map-marker icon"></i> <%= featured.address %> </p>
+          </div>
+          <table class="property-details">
+            <tr>
+              <td><i class="fa fa-bed"></i>  <%= featured.bedrooms %>  Bedrooms</td>
+              <td><i class="fa fa-tint"></i>  <%= featured.bath %>  Baths</td>
+              <td><i class="fa fa-expand"></i>  <%= featured.area %>  Meter Sq</td>
+            </tr>
+          </table>
+        </a>
+        <a href="<%= property_path(featured) %>" class="property-img responsive-property-img" style="width: 90%;">
+            <div class="img-fade"></div>
+            <div class="property-tag button alt featured">Featured</div>
+            <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
+            <div class="property-price"> <%= featured.price %> SDG</div>
+            <div class="property-color-bar"></div>
+            <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
+        </a>
+      </div>
+    <% end %>
+    </div><!-- end slider -->
+  </div><!-- end slider wrap -->
+</section>
+
+<%= render 'newsletter' %>

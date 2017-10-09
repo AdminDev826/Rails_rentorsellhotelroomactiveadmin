@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p align="center"> <%= image_tag(attachments['logo2.jpg'].url, style: 'width: 400px; height: 250px; margin-bottom: -3%;') %> </p>
+      <p align="center"> Welcome to Araddi </p>
+      <p align="center"> Please confirm your email address. If you are ever locked out of your account, this will help us get you back in. </p>
+      <p align="center"><%= link_to 'Confirm your email address', confirmation_url(@resource, confirmation_token: @token), style: 'background: darkblue; color: white; padding: 8px; text-decoration: none; border-radius: 4px;' %></p>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

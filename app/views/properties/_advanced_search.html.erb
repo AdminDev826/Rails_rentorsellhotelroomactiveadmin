@@ -1,0 +1,62 @@
+<div class="col-lg-4 col-md-4 sidebar">
+		
+<div class="widget widget-sidebar sidebar-properties advanced-search" style="margin-top: auto;">
+  <h4><span>Advanced Search</span> <%= image_tag "images/divider-half.png" %> </h4>
+  <div class="widget-content box">
+  	<%= search_form_for @search, url: search_properties_path, method: :post do |f| %>
+
+	  <div class="form-block border">	
+	  	<%= f.label :title_cont, "Title" %>
+	  	<%= f.text_field :title_cont, placeholder: "Any", class: "border" %>	
+	  </div>
+
+	  <div class="form-block border">
+			<%= f.label :location_eq, "Location" %>
+			<%= f.select :location_eq, options_for_select([["Khartoum", "Khartoum"], ["Bahri, Khartoum/north", "Bahri, Khartoum/north"], ["Umdurman", "Umdurman"]]), {include_blank: "Select Location" }, { class: "border" }%>
+	  </div>
+
+	  <div class="form-block border">
+			<%= f.label :tag_cont, "Property Tag" %>
+			<%= f.select :tag_cont, options_for_select([["Rent", "Rent"], ["Buy", "Sell"]]), { include_blank: "Select Tag" }, { class: "border" }%>
+	  </div>
+
+	  <div class="form-block border">
+			<%= f.label :listing_type_eq, "Property Listing Type" %>
+			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), { include_blank: "Select Listing Type" }, { class: "border" } %>
+	  </div>
+	  
+	  <div class="form-block">
+			<label>Price</label>
+			<%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price SDG", min: 0 %>
+			<%= f.number_field :price_lteq, class: "area-filter border", placeholder: "Max Price SDG", min: 0 %>
+			<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+			<label>Bedrooms</label>
+			<%= f.number_field :bedrooms_gteq, class: "area-filter border", placeholder: "Min Bedrooms", min: 0 %>
+			<%= f.number_field :bedrooms_lteq, class: "area-filter border", placeholder: "Max Bedrooms", min: 0 %>
+			<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+			<label>Baths</label>
+			<%= f.number_field :bath_gteq, class: "area-filter border", placeholder: "Min Baths", min: 0 %>
+			<%= f.number_field :bath_lteq, class: "area-filter border", placeholder: "Max Baths", min: 0 %>
+			<div class="clear"></div>
+	  </div>
+
+	  <div class="form-block">
+			<label>Area</label>
+			<%= f.number_field :area_gteq, class: "area-filter border", placeholder: "Min Area in Meter Sq", min: 0 %>
+			<%= f.number_field :area_lteq, class: "area-filter border", placeholder: "Max Area in Meter Sq", min: 0 %>
+			<div class="clear"></div>
+	  </div> 
+
+	  <div class="form-block">
+			<input type="submit" class="button" value="Find Properties" />
+	  </div>
+
+	<% end %>
+  </div><!-- end widget content -->
+</div><!-- end widget -->

@@ -1,0 +1,67 @@
+<% if user_signed_in? %>
+
+	<%
+		@properties = current_user.properties
+	  	@properties = Kaminari.paginate_array(@properties).page(params[:page]).per(5)
+	 %>
+
+	<section class="subheader">
+	  <div class="container">
+	    <h1>My Properties</h1>
+	    <div class="breadcrumb right"> <%= link_to "Home", page_path('index') %> <i class="fa fa-angle-right"></i> <a href="#" class="current"> Properties </a> </div>
+	    <div class="clear"></div>
+	  </div>
+	</section>
+
+	<section class="module my-properties">
+	  <div class="container">
+	  
+		<div class="row">
+			<%= render "sidebar" %>
+
+			<div class="col-lg-9 col-md-9">
+			<% if @properties.count > 0 %>
+				<table class="my-properties-list">	
+				  <tr>
+					<th>Image</th>
+					<th>Property</th>
+					<th>Post Status</th>
+					<th>Date Created</th>
+					<th>Actions</th>
+				  </tr>
+				  <% @properties.each do |property| %>
+					  <tr>
+						<td class="property-img"><a href="property-single.html"><%= image_tag property.image.url %></a></td>
+						<td class="property-title">
+							<a href="property-single.html"><%= property.title %></a><br/>
+							<p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
+							<p><strong><%= property.price %> SDG </strong></p>
+						</td>
+						<td class="property-post-status"><span class="button small alt"> <%= isPublished_status(property.isPublished) %></span></td>
+						<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>
+						<td class="property-actions">
+							<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>
+							<a href="<%= edit_property_path(property) %>"><i class="fa fa-pencil icon"></i>Edit</a>
+							<a><i class="fa fa-close icon"></i></a><%= link_to "Delete", property_path(property),  method: :delete, data: {confirm: "You sure?"}, style: "margin-left: -6%;" %>
+						</td>
+					  </tr>
+				  <% end %>
+				  
+				</table>
+			<% else %>
+				<p align="center" style="margin-top: 14%; margin-left: 28%; width: 53%; font-size: x-large; border-bottom: 2px solid #48a0dc; background-color: white; font-style: oblique;">You have not listed any properties yet. </p>
+			<% end %>		
+				<span><%= paginate @properties, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %></span>
+				
+				<div class="clear"></div>
+				
+			</div><!-- end col -->
+		</div><!-- end row -->
+
+	  </div><!-- end container -->
+	</section>
+
+	<%= render 'newsletter' %>
+<% else %>
+	<%= controller.redirect_to page_path('index'), notice: "You must be Signed in to View your Properties. " %>
+<% end	%> 	

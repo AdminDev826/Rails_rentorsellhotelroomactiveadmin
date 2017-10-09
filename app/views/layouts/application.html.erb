@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Araddi - A Simple Way to Find Real Estate in Khartoum ">
+	<meta name="author" content="Rype Creative [Chris Gipple]">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= favicon_link_tag 'images/logo.ico' %>
+	<title>Araddi.com | A Real Estate Marketplace in Khartoum, Sudan</title>
+    
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= stylesheet_link_tag    'scss/mobile', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= stylesheet_link_tag    'scss/static', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <%= render 'navbar' %>
+
+  <body style="top: 40px;">
+    <%= yield %>
+  </body>
+
+  <footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget">
+                <div align="center"> <a class="footer-logo" href="<%= page_path('index') %>"><%= image_tag "images/logo4.png", alt: "", class: 'responsive-footer-logo footer-logo-class', style: 'width: 33%' %></a> </div>
+                <div class="divider" style="background: #566573"></div>
+                <ul class="social-icons circle" style="text-align: center;">
+                    <li style="margin-right: 6%;">
+                      <a target="_blank" href=" <%= raw(Setting.first.fb_link) %> ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    
+                    <li style="margin-right: 6%;">
+                      <a target="_blank" href=" <%= raw(Setting.first.instagram_link) %> ">
+                        <i class="fa fa-instagram"></i>
+                      </a>
+                    </li>
+                    
+                    <li style="margin-right: 6%;">
+                      <a target="_blank" href=" <%= raw(Setting.first.twitter_link) %> ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a target="_blank" href=" <%= raw(Setting.first.youtube_link) %> ">
+                        <i class="fa fa-youtube"></i>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
+                <h4><span class="footer-text-color"> <strong> Company </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <ul>
+                    <li>
+                      <a href="<%= page_path('about') %>"><h3 class="footer-text-color">About Us</h3></a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="<%= page_path('terms') %>"><h3 class="footer-text-color">Terms of Service</h3></a>
+                      <div class="clear"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 widget footer-widget from-the-blog responsive-footer-text">
+                <h4><span class="footer-text-color"> <strong> Help & Support </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                
+                <ul>
+                    <li>
+                      <a href="<%= page_path('faq') %>"><h3 class="footer-text-color">Questions?</h3></a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="<%= page_path('feedback') %>"><h3 class="footer-text-color">Website Feedback</h3></a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="<%= page_path('scams') %>"><h3 class="footer-text-color">Avoid Scams</h3></a>
+                      <div class="clear"></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-12 widget footer-widget from-the-blog responsive-footer-text">
+                <h4><span class="footer-text-color"> <strong> Contact Us </strong> </span> <%= image_tag "images/divider-half.png", alt: "" %></h4>
+                <ul>
+                    <li>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.phone) %></h3></a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="<%= page_path('contact') %>"><h3 class="footer-text-color"><%= raw(Setting.first.email) %></h3></a>
+                      <div class="clear"></div>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end footer container -->
+</footer>
+
+<div class="bottom-bar">
+    <div class="container" style="color: #D0D3D4">
+    © 2017  |  Araddi - All Rights Reserved
+    </div>
+</div>
+
+<!-- JavaScript file links -->
+
+<%= javascript_include_tag 'js/jquery-3.1.1.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'assets/jquery-ui-1.12.1/jquery-ui.min.js', 'data-turbolinks-track': 'reload' %>
+
+<%= javascript_include_tag 'js/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'assets/slick-1.6.0/slick.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'assets/chosen-1.6.2/chosen.jquery.min.js', 'data-turbolinks-track': 'reload' %>
+
+<%= javascript_include_tag 'js/isotope.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'js/wNumb.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'js/nouislider.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'js/global.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'js/hamburder-menu.js', 'data-turbolinks-track': 'reload' %>
+</html>
