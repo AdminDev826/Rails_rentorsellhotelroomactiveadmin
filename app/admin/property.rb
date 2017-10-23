@@ -40,11 +40,11 @@ ActiveAdmin.register Property do
   end	
   
   action_item :Actived, only: :show do 
-		link_to "Actived", Active_admin_property_path(property), method: :put if !property.isActive?
+		link_to "Actived", Actived_admin_property_path(property), method: :put if !property.isActive?
 	end	
 
 	action_item :InActived, only: :show do 
-		link_to "InActived", InActive_admin_property_path(property), method: :put if property.isActive?
+		link_to "InActived", InActived_admin_property_path(property), method: :put if property.isActive?
 	end
 
 	member_action :Publish, method: :put do

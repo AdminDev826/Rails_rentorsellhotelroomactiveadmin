@@ -40,7 +40,7 @@
 				<div class="property-header">
 					<div class="property-title">
 						<h4><%= @property.title %></h4>
-            <div class="property-price-single right"><%= @property.price %> SDG <span>Per Month</span></div>
+            <div class="property-price-single right"><%= @property.price %> SDG, <%= (property.price / 6.67538).to_i %> USD <span>Per Month</span></div>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i><%= @property.address %></p>
             <div class="clear"></div>
 					</div>
