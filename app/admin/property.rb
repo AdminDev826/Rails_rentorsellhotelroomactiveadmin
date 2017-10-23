@@ -2,7 +2,7 @@ WtfLang::API.key = "fa9d6d9faf06420ada0090796f8c778d"
 
 ActiveAdmin.register Property do
 
-	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :bedrooms,
+	permit_params :title, :listing_type, :location, :isPublished, :isFeatured, :isActive, :bedrooms,
                 :bath, :furnished, :area, :price, :availibility, :image, :address, :user_id,
                 :near_by_location, :description, :tag, :longitude, :latitude, 
                 images_attributes: [:id, :property_id, :image, :_destroy]
@@ -14,7 +14,9 @@ ActiveAdmin.register Property do
 	scope :published
 	scope :unpublished
 	scope :featured
-	scope :not_featured
+  scope :not_featured
+  scope :actived
+  scope :inactived
   
   # batch_action :isFeatured do |selection|
   #   Property.find(selection).each { |property| property.update(isFeatured: 1) }
@@ -35,7 +37,15 @@ ActiveAdmin.register Property do
 
 	action_item :UnFeatured, only: :show do 
 		link_to "UnFeatured", UnFeatured_admin_property_path(property), method: :put if property.isFeatured?
+  end	
+  
+  action_item :Actived, only: :show do 
+		link_to "Actived", Active_admin_property_path(property), method: :put if !property.isActive?
 	end	
+
+	action_item :InActived, only: :show do 
+		link_to "InActived", InActive_admin_property_path(property), method: :put if property.isActive?
+	end
 
 	member_action :Publish, method: :put do
 		property = Property.find(params[:id])
@@ -59,12 +69,24 @@ ActiveAdmin.register Property do
 		property = Property.find(params[:id])
 		property.update(isFeatured: 0)
 		redirect_to admin_property_path(property)
+  end	
+  
+  member_action :Actived, method: :put do
+		property = Property.find(params[:id])
+		property.update(isActive: 1)
+		redirect_to admin_property_path(property)
+	end	
+
+	member_action :InActived, method: :put do
+		property = Property.find(params[:id])
+		property.update(isActive: 0)
+		redirect_to admin_property_path(property)
 	end	
 	
 	index do
     selectable_column
     column :user do |property|
-      property.user.first_name
+      property.user.first_name + property.user.middle_name
     end
     column "Image" do |image|
         image_tag image.image.url(:thumb)
@@ -100,6 +122,7 @@ ActiveAdmin.register Property do
       row :latitude
       row :isPublished
       row :isFeatured
+      row :isActive
       row :tag
       row "Images" do
         ul do
@@ -144,6 +167,7 @@ ActiveAdmin.register Property do
       f.input :latitude
       f.input :isPublished
       f.input :isFeatured
+      f.input :isActive
       f.input :tag, as: :select, collection: ['Rent', 'Sell'], include_blank: false
       f.inputs "Images" do
         f.has_many :images, allow_destroy: true do |p|
@@ -172,4 +196,5 @@ ActiveAdmin.register Property do
   filter :image
   filter :isPublished, as: :select, collection: ['1', '0']
   filter :isFeatured, as: :select, collection: ['1', '0']
+  filter :isActive, as: :select, collection: ['1', '0']
 end

@@ -8,6 +8,7 @@
         <% else %>
           <div class="property-tag button status responsive-property-tag">For <%= property.tag %> </div>
         <% end %>
+        <div class="property-price-u responsive-property-price"> <%= (property.price / 6.67538).to_i %> USD </div>
         <div class="property-price responsive-property-price"> <%= property.price %> SDG </div>
         <div class="property-color-bar"></div>
         <%= image_tag property.image.url, style: "width: 100%; height: 245px;" %>

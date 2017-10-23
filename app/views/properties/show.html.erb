@@ -137,6 +137,7 @@
 			          	<li class="details">Property Location: <span><%= @property.location %></span></li>
 			          	<li  class="details">Property Availability: <span><%= @property.availibility %></span></li>
 			          	<li class="details">Furnished: <span><%= human_boolean(@property.furnished) %></span></li>
+									<li class="details">Actived: <span><%= isActive_status(@property.isActive) %></span></li>
 			          </div>
 		          	<div class="col-lg-6 col-md-6">
 			          	<li  class="details">Posted at: <span><%= time_ago_in_words(@property.created_at) %> ago</span></li>

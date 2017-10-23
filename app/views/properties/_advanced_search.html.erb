@@ -25,6 +25,12 @@
 			<%= f.select :listing_type_eq, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Villa", "Villa"], ["Office", "Office"], ["Farm House", "Farm House"], ["Empty Land", "Empty Land"]]), { include_blank: "Select Listing Type" }, { class: "border" } %>
 	  </div>
 	  
+	<div class="form-block">
+      <%= number_field_tag :uprice_gteq, nil, class: "area-filter border", placeholder: "Min Price USD", min: 0 %>
+      <%= number_field_tag :uprice_lteq, nil, class: "area-filter border", placeholder: "Max Price USD", min: 0 %>
+      <div class="clear"></div>
+    </div>
+
 	  <div class="form-block">
 			<label>Price</label>
 			<%= f.number_field :price_gteq, class: "area-filter border", placeholder: "Min Price SDG", min: 0 %>

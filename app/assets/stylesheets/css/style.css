@@ -1220,6 +1220,9 @@ header { background:white; width:100%; position:fixed; z-index:1000; }
 	left:15px;
 	z-index:20;
 }
+.property-price-u {
+	bottom: 32px !important;
+}
 .property-price span {  
 	font-size:12px;
 	font-style:italic;

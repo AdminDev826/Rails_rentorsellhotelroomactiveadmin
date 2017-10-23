@@ -17,6 +17,8 @@ class Property < ApplicationRecord
 	scope :unpublished, ->{ where(isPublished: 0) }
 	scope :featured, ->{ where(isFeatured: 1) }
 	scope :not_featured, ->{ where(isFeatured: 0) }
+	scope :actived, ->{ where(isActive: 1) }
+	scope :inactived, ->{ where(isActive: 0) }
 	scope :rent, ->{ where(tag: "Rent") }
 	scope :buy, ->{ where(tag: "Buy") }
 	scope :sell, ->{ where(tag: "Sell") }
@@ -49,9 +51,9 @@ class Property < ApplicationRecord
 
 	def self.search(search)
 		if(search)
-			where(["title LIKE ? AND isPublished = ?","%#{search}%", "1"])
+			where(["title LIKE ? AND isPublished = ? AND isActive = ?","%#{search}%", "1", "1"])
 		else
-			order(:id => :DESC).where(isPublished: 1)
+			order(:id => :DESC).where(isPublished: 1).where(isActive: 1)
 		end	
 	end
 

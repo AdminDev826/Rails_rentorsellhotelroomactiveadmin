@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20171023013152_add_is_active_to_property.rb
