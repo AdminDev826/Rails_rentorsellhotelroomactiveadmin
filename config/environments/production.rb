@@ -9,7 +9,7 @@ Rails.application.configure do
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :user_name            => 'araddi.com@gmail.com',
-      :password             => 'walabudri786',
+      :password             => '@Nadus1979!',
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
 
