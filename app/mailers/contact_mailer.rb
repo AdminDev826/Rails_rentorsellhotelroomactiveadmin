@@ -8,4 +8,5 @@ class ContactMailer < ApplicationMailer
     @email = email
     mail to: 'araddi.com@gmail.com', subject: subject, from: email
   end
+  
 end
