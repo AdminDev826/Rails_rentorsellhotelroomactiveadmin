@@ -77,6 +77,7 @@
             <div class="property-tag button status">
               For Sale
             </div>
+            <div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
             <div class="property-price"> <%= featured.price %> SDG</div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
@@ -124,6 +125,7 @@
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
+            <div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
             <div class="property-price"> <%= featured.price %> SDG</div>
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
@@ -138,19 +140,19 @@
 
 <script type="text/javascript">
     $(function() {
-      $('#uprice_gteq').change(function(){
+      $('#uprice_gteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_gteq').val(Math.round(i));
       });
-      $('#uprice_lteq').change(function(){
+      $('#uprice_lteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_lteq').val(Math.round(i));
       });
-      $('#q_price_gteq').change(function(){
+      $('#q_price_gteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
         $('#uprice_gteq').val(Math.round(i));
       });
-      $('#q_price_lteq').change(function(){
+      $('#q_price_lteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
         $('#uprice_lteq').val(Math.round(i));
       });

@@ -44,6 +44,9 @@
             <div class="form-block">
               <%= f.input :price, input_html: { class: 'border', min: 0, placeholder: "Price Per Month SDG" }, label: 'Rent Price' %>
             </div>
+            <div class="form-block">
+              <%= number_field_tag :uprice, nil, class: "numeric integer required border", placeholder: "Price Per Month USD", min: 0 %>
+            </div>
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="form-block">
@@ -112,12 +115,22 @@
           $("#sale_tag").fadeIn(500);
         }
       }
+      $(function() {
+        $('#uprice').keyup(function(){
+          var i = parseInt($(this).val()) * 6.67538;
+          $('#property_price').val(Math.round(i));
+        });
+        $('#property_price').keyup(function(){
+          var i = parseInt($(this).val()) / 6.67538;
+          $('#uprice').val(Math.round(i));
+        });
+      });
     </script>
     
     <script>
       $( document ).ready(function() {
-         $('#datepicker').datepicker({
-            dateFormat: 'dd/mm/yy'
-         });
+        $('#datepicker').datepicker({
+          dateFormat: 'dd/mm/yy'
+        });
       });
     </script>

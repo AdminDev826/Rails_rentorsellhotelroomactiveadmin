@@ -72,19 +72,19 @@
 
 <script type="text/javascript">
     $(function() {
-      $('#uprice_gteq').change(function(){
+      $('#uprice_gteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_gteq').val(Math.round(i));
       });
-      $('#uprice_lteq').change(function(){
+      $('#uprice_lteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_lteq').val(Math.round(i));
       });
-      $('#q_price_gteq').change(function(){
+      $('#q_price_gteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
         $('#uprice_gteq').val(Math.round(i));
       });
-      $('#q_price_lteq').change(function(){
+      $('#q_price_lteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
         $('#uprice_lteq').val(Math.round(i));
       });
