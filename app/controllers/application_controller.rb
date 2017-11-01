@@ -35,6 +35,9 @@ class ApplicationController < ActionController::Base
     end
     
     def set_search_param
-      @search = Property.ransack(params[:q])
+      up = params[:q]
+      up.delete("uprice_gteq") if !up.nil?
+      up.delete("uprice_lteq") if !up.nil?
+      @search = Property.ransack(up)
     end
 end
