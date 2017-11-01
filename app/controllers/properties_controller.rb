@@ -49,16 +49,20 @@ class PropertiesController < ApplicationController
   end
 
   def new
-  	if user_signed_in?
-  		@property = Property.new
-  	else
-  		redirect_to page_path('index'), :notice => "You must be Logged in to Submit Property "
-  	end		
+  	@property = Property.new	
   end
 
   def create
+    up = property_params
+    if up[:currency_type] == "0"
+      up[:uprice] = (up[:price].to_i / 6.67538).to_i.to_s
+    else
+      up[:uprice] = up[:price]
+      up[:price] = (up[:price].to_i * 6.67538).to_i.to_s
+    end
+
   	@user = current_user
-  	@property =  @user.properties.build(property_params)
+  	@property =  @user.properties.build(up)
   	if @property.save
   		redirect_to property_path(@property), :notice => "Your Property has been Saved. "
   	else
@@ -73,9 +77,17 @@ class PropertiesController < ApplicationController
 
   def update
   	@property = Property.find(params[:id])
-  	authorize! :update, @property
+    authorize! :update, @property
+    
+    up = property_params
+    if up[:currency_type] == "0"
+      up[:uprice] = (up[:price].to_i / 6.67538).to_i.to_s
+    else
+      up[:uprice] = up[:price]
+      up[:price] = (up[:price].to_i * 6.67538).to_i.to_s
+    end
 
-    if @property.update_attributes(property_params)
+    if @property.update_attributes(up)
   	  redirect_to property_path, :notice => "Your Property has been Updated. "
     else 
   	  render "edit"

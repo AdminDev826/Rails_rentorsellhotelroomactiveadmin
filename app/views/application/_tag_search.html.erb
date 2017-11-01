@@ -13,8 +13,8 @@
     </div>
     
     <div class="form-block">
-      <%= number_field_tag :uprice_gteq, nil, class: "area-filter border", placeholder: "Min Price USD", min: 0 %>
-      <%= number_field_tag :uprice_lteq, nil, class: "area-filter border", placeholder: "Max Price USD", min: 0 %>
+      <%= f.number_field :uprice_gteq, class: "area-filter border", placeholder: "Min Price USD", min: 0.0 %>
+      <%= f.number_field :uprice_lteq, class: "area-filter border", placeholder: "Max Price USD", min: 0 %>
       <div class="clear"></div>
     </div>
 
@@ -43,21 +43,21 @@
   </div>
   <script type="text/javascript">
     $(function() {
-      $('#uprice_gteq').keyup(function(){
+      $('#q_uprice_gteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_gteq').val(Math.round(i));
       });
-      $('#uprice_lteq').keyup(function(){
+      $('#q_uprice_lteq').keyup(function(){
         var i = parseInt($(this).val()) * 6.67538;
         $('#q_price_lteq').val(Math.round(i));
       });
       $('#q_price_gteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
-        $('#uprice_gteq').val(Math.round(i));
+        $('#q_uprice_gteq').val(Math.round(i));
       });
       $('#q_price_lteq').keyup(function(){
         var i = parseInt($(this).val()) / 6.67538;
-        $('#uprice_lteq').val(Math.round(i));
+        $('#q_uprice_lteq').val(Math.round(i));
       });
     });
 </script>
