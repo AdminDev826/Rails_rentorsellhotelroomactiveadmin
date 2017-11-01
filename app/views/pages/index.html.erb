@@ -77,8 +77,14 @@
             <div class="property-tag button status">
               For Sale
             </div>
-            <div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
-            <div class="property-price"> <%= featured.price %> SDG</div>
+            <% if featured.currency_type == 0 %>
+							<div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
+              <div class="property-price"> <%= featured.price %> SDG</div>
+						<% else %>
+							<div class="property-price-u property-price responsive-property-price"> <%= featured.price) %> USD </div>
+              <div class="property-price"> <%= (featured.price * 6.67538).to_i %> SDG</div>
+						<% end %>
+            
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>
@@ -125,8 +131,15 @@
             <div class="img-fade"></div>
             <div class="property-tag button alt featured">Featured</div>
             <div class="property-tag button status">For <%= featured.tag.capitalize %></div>
-            <div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
-            <div class="property-price"> <%= featured.price %> SDG</div>
+            
+            <% if featured.currency_type == 0 %>
+							<div class="property-price-u property-price responsive-property-price"> <%= (featured.price / 6.67538).to_i %> USD </div>
+              <div class="property-price"> <%= featured.price %> SDG</div>
+						<% else %>
+							<div class="property-price-u property-price responsive-property-price"> <%= featured.price) %> USD </div>
+              <div class="property-price"> <%= (featured.price * 6.67538).to_i %> SDG</div>
+						<% end %>
+
             <div class="property-color-bar"></div>
             <%= image_tag featured.image.url, style: "height: 210px; width: 100%;" %>
         </a>

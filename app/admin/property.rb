@@ -149,6 +149,7 @@ ActiveAdmin.register Property do
       f.input :bath
       f.input :furnished
       f.input :area
+      f.input :currency_type, as: :select, collection: [['SDG', 0], ['USD', 1]]
       f.input :price
       if f.object.new_record?
         f.input :description

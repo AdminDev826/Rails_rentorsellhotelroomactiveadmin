@@ -35,7 +35,13 @@
 						<td class="property-title">
 							<a href="property-single.html"><%= property.title %></a><br/>
 							<p class="property-address"><i class="fa fa-map-marker icon"></i><%= property.address %></p>
-							<p><strong><%= property.price %> SDG </strong></p>
+
+							<% if property.currency_type == 0 %>
+								<p><strong><%= property.price %> SDG, <%= (property.price / 6.67538).to_i %> USD</strong></p>
+							<% else %>
+								<p><strong><%= (property.price * 6.67538).to_i %> SDG, <%= property.price %> USD</strong></p>
+							<% end %>
+
 						</td>
 						<td class="property-post-status"><span class="button small alt"> <%= isPublished_status(property.isPublished) %></span></td>
 						<td class="property-date"><%= property.created_at.strftime("%m/%d/%Y") %></td>

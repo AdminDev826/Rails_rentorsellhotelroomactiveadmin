@@ -26,7 +26,12 @@
 					<td class="property-title">
 						<a href="property-single.html"> <%= Property.find(property).title %> </a><br/>
 						<p class="property-address"><i class="fa fa-map-marker icon"></i> <%= Property.find(property).title %> </p>
-						<p><strong><%= Property.find(property).price %> SDG </strong></p>
+						<% recent = Property.find(property) %>
+						<% if recent.currency_type == 0 %>
+							<p><strong><%= recent.price %> SDG, <%= (recent.price / 6.67538).to_i %> USD</strong></p>
+						<% else %>
+							<p><strong><%= (recent.price * 6.67538).to_i %> SDG, <%= recent.price %> USD</strong></p>
+						<% end %>
 					</td>
 					<td class="property-actions">
 						<a href="<%= property_path(property) %>"><i class="fa fa-eye icon"></i>View</a>

@@ -47,7 +47,11 @@
           <div class="col-lg-4 col-md-4 col-sm-4"><a href="<%= property_path(recent) %>"><%= image_tag recent.image.url %></a></div>
           <div class="col-lg-8 col-md-8 col-sm-8">
             <h5><a href="<%= property_path(recent) %>"><%= recent.title %></a></h5>
-            <p><strong>$<%= recent.price %></strong> Per Month</p>
+            <% if recent.currency_type == 0 %>
+              <p><strong><%= recent.price %> SDG, <%= (recent.price / 6.67538).to_i %> USD</strong> Per Month</p>
+            <% else %>
+              <p><strong><%= (recent.price * 6.67538).to_i %> SDG, <%= recent.price %> USD</strong> Per Month</p>
+            <% end %>
           </div>
           </div>
         </div>
