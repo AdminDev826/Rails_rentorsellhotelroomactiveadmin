@@ -1,4 +1,4 @@
-# Android Drive Monitor App
+# Ruby on Rails ActiveAdmin
 
 [![Ruby on Rails](https://img.shields.io/badge/ruby%20on%20rails-activeadmin-brightgreen.svg)](http://rubyonrails.org/)
 
