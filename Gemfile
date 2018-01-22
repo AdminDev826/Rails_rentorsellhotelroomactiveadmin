@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'high_voltage', '~> 3.0'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'geocoder'
 gem 'devise'
 gem "cancan"
